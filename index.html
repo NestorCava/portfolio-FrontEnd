@@ -27,7 +27,7 @@
             </div>
             <div id="info-data">
                 <div>
-                    <h1>Néstor D. Cavallini</h1>
+                    <h1 id="identificacion">Néstor D. Cavallini</h1>
                     <div id="info-company">Asistente Técnico en Cavallini SRL</div>
                     <div id="info-contact">
                         <span>Entre Rios (Argentina)</span>
@@ -97,6 +97,9 @@
         <h1>Proyectos</h1>
     </div>
 
+    <input type="file" id="file" onchange="showFile1(this)">
+
+    <script src="js/objeto.js"></script>
      <script>
         function cambiar_parrafo(){
             document.getElementById("edit-about").style.display="block";
