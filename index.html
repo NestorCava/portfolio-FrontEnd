@@ -55,17 +55,18 @@
         </div>
     </div>
 
-    <div class="card mat-card" id="about">
+   
 
+    <div class="card mat-card" id="about">
         <div>
             <h1>Acerca de</h1>
-            <div class="btn-edit"><a href="#" class="btn-right"><img
+            <div class="btn-edit" onclick="cambiar_parrafo()"><a href="#" class="btn-right"><img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAANRJREFUSEvFlX0RwjAMR98UgAQkgASUAIqQADiYBCQgAQk4gMtdy5Vd2vTz2N/re/kl6TYx+JkG82kVHF2B11ihLQKBXxz4BKiSWsEaeAKroHJVUiMQ+AvYAvdAcgN8y77eUoEAzsAeeASSWYOLpUQQ9lwSeMnGtUudc64ghHuQSHYpeG4CDS5n1Z4vY1gJZPUOSvYsuJWgGZ4SdIHHBDF49LamvmfaDN7KgSp4LMFSUA3PETTBrS3q8quw7kGz5C8CbYtKkvwUnbumXQUlMPPd4TP4APh7JRlD59qMAAAAAElFTkSuQmCC" /></a>
             </div>
         </div>
         
         <div>
-            <p>
+            <p id="text-about">
                 Hola, soy Néstor de la ciudad de Paraná - Entre Ríos.
         
                 En la escuela secundaria inició mi formación en programación. Me recibí como Técnico en Electrónica en el IPET Juan
@@ -76,6 +77,10 @@
                 Mi curiosidad me ha llevado a incursionar en distintos lenguajes, profundizando más en C++ (consola y entorno
                 gráfico), Java y Python.
             </p>
+        </div>
+
+        <div>
+            <input id="edit-about" type="text" oninput="myFunction2(this.value)" style="display:none">
         </div>
     </div>
 
@@ -91,6 +96,28 @@
     <div class="card mat-card">
         <h1>Proyectos</h1>
     </div>
+
+     <script>
+        function cambiar_parrafo(){
+            document.getElementById("edit-about").style.display="block";
+        };
+
+        function myFunction2(valor){
+            document.getElementById("text-about").innerText=valor;
+        };
+
+        function logMessaje(message){
+            console.log(message + "<br");
+        }
+        //Controla si se presiona un enter
+        let textArea = document.getElementById("edit-about")
+        textArea.addEventListener('keyup', (e)=>{
+            logMessaje('Key "$(e.key)" released [event: keyup]');
+            if (e.key=="Enter"){
+                document.getElementById("edit-about").style.display="none"
+            }
+        });
+    </script>
 
 </body>
 </html>
