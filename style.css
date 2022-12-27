@@ -55,5 +55,9 @@ h1{
 
 #about{
     padding: 16px;
-    height: auto;
+}
+
+#about>div{
+    display: flex;
+    justify-content: space-between;
 }
