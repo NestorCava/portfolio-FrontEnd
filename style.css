@@ -16,7 +16,7 @@ div#profile-background img{
 }
 
 div#info{
-    padding-left: 16px;
+    padding: 16px;
 }
 
 div#info-img{
@@ -31,9 +31,29 @@ div#info-img>img{
     margin-top: -100px;
 }
 
-h1{
-    padding-left: 16px;
 
+div#info-data{
+    
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+}
+
+li img{
+    width: 100px;
+    height: 33px;
 }
 
 
+li>a{
+    display: flex;
+}
+h1{
+    padding-left: 16px;
+    width: auto;
+}
+
+#about{
+    padding: 16px;
+    height: auto;
+}
