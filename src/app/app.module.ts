@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { IconNetworkComponent } from './components/icon-network/icon-network.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconUserComponent } from './components/icon-user/icon-user.component';
+import { PortfolioHeaderComponent } from './components/portfolio-header/portfolio-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     IconNetworkComponent,
-    IconUserComponent
+    IconUserComponent,
+    PortfolioHeaderComponent
   ],
   imports: [
     BrowserModule,

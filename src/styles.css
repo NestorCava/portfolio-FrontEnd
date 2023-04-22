@@ -3,3 +3,17 @@
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
 }
+
+.container-seccion{
+    background-color: #f4f4f4;
+    border-style: solid;
+    border-color: dimgray;
+    margin: 10px 10px;
+    border-radius: 5px;
+    box-shadow:2px 2px 2px darkgray;
+    padding-bottom: 10px;
+}
+
+h1.titulos{
+    padding-left: 10px;
+}
