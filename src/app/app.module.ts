@@ -11,6 +11,13 @@ import { InstitutionComponent } from './components/institution/institution.compo
 import { BtnInterestComponent } from './components/btn-interest/btn-interest.component';
 import { BtnAddsectionComponent } from './components/btn-addsection/btn-addsection.component';
 import { BtnMasComponent } from './components/btn-mas/btn-mas.component';
+import { AboutComponent } from './components/about/about.component';
+import { EducationItemComponent } from './components/education-item/education-item.component';
+import { ExperienceEducationComponent } from './components/experience-education/experience-education.component';
+import { ExperienceItemComponent } from './components/experience-item/experience-item.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { BtnMasComponent } from './components/btn-mas/btn-mas.component';
     InstitutionComponent,
     BtnInterestComponent,
     BtnAddsectionComponent,
-    BtnMasComponent
+    BtnMasComponent,
+    AboutComponent,
+    EducationItemComponent,
+    ExperienceEducationComponent,
+    ExperienceItemComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    SkillsItemComponent
   ],
   imports: [
     BrowserModule,
