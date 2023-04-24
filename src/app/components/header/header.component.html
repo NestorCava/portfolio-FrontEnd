@@ -3,16 +3,10 @@
 
     <div class="icons">
         <app-icon-network
-        icon="../../../assets/icons/github-logo-24.png"
-        url="http://www.github.com/NestorCava"
-        padding="15px"
-        >
-        </app-icon-network>
-
-        <app-icon-network
-        icon="../../../assets/icons/linkedin-square-logo-24.png"
-        url="http://www.linkedin.com/in/nestor-daniel-cavallini"
-        padding="15px"
+            *ngFor="let icon of people[0].networks"
+            [icon]="icon[0]"
+            [url]="icon[1]"
+            padding="15px"
         >
         </app-icon-network>
 

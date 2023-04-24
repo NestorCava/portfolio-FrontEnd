@@ -7,6 +7,10 @@ import { IconNetworkComponent } from './components/icon-network/icon-network.com
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconUserComponent } from './components/icon-user/icon-user.component';
 import { PortfolioHeaderComponent } from './components/portfolio-header/portfolio-header.component';
+import { InstitutionComponent } from './components/institution/institution.component';
+import { BtnInterestComponent } from './components/btn-interest/btn-interest.component';
+import { BtnAddsectionComponent } from './components/btn-addsection/btn-addsection.component';
+import { BtnMasComponent } from './components/btn-mas/btn-mas.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { PortfolioHeaderComponent } from './components/portfolio-header/portfoli
     HeaderComponent,
     IconNetworkComponent,
     IconUserComponent,
-    PortfolioHeaderComponent
+    PortfolioHeaderComponent,
+    InstitutionComponent,
+    BtnInterestComponent,
+    BtnAddsectionComponent,
+    BtnMasComponent
   ],
   imports: [
     BrowserModule,

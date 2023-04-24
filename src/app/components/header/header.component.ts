@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input } from '@angular/core';
+
+import { PEOPLES } from 'src/mock-people';
+import { People } from 'src/People';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  people: People[] = PEOPLES;
+
+  constructor(){}
+  
 }

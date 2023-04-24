@@ -13,7 +13,33 @@
             id="profile-picture"    
             alt="Cavallini Néstor D Foto de Perfil "
         >
-        <h1 class="card-title titulos" id="name-header">Cavallini Nestor Daniel</h1>
+        <h1 
+            class="card-title titulos" 
+            id="name-header"
+        >
+            {{people[0].name + ' '+ people[0].second_name}}
+        </h1>
+    </div>
+
+    <div class="card-columns" id="info-header">
+        
+        <div class="col-9">
+            <ul class="list-unstyled" id="list-personal-info">
+                <li><h4 class="card-subtitle">{{people[0].position}}</h4></li>
+                <li><h4 class="card-subtitle">{{people[0].location}}</h4></li>
+            </ul>
+        </div>
+        
+        <div class="col-3">
+            <app-institution></app-institution>
+        </div>
+        
+    </div>
+
+    <div class="buttons-header">
+        <app-btn-interest class="item-button"></app-btn-interest>
+        <app-btn-addsection class="item-button"></app-btn-addsection>
+        <app-btn-mas class="item-button"></app-btn-mas>
     </div>
 
 </div>
