@@ -8,17 +8,24 @@
     >
 
     <div class="card-img">
+        
         <img 
             src="../../../assets/img/perfil.jpg" 
             id="profile-picture"    
             alt="Cavallini Néstor D Foto de Perfil "
         >
-        <h1 
+        
+        <div class="titulo">
+            <h1 
             class="card-title titulos" 
             id="name-header"
         >
             {{people[0].name + ' '+ people[0].second_name}}
         </h1>
+            <app-icon-edit class="icon-edit"></app-icon-edit>
+        </div>
+        
+        
     </div>
 
     <div class="card-columns" id="info-header">

@@ -12,8 +12,19 @@
     border-radius: 5px;
     box-shadow:2px 2px 2px darkgray;
     padding-bottom: 10px;
+
+    
+}
+div.titulo{
+    display: flex;
+    justify-content: space-between;
 }
 
 h1.titulos{
     padding-left: 10px;
+    
+}
+
+.icon-edit{
+    margin: 5px;
 }
