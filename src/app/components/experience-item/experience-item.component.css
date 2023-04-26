@@ -8,3 +8,7 @@ img#image-logo-experience{
     
     
 }
+div#icono-edicion-item-experiencia{
+    display: flex;
+    justify-content: end;
+}

@@ -8,3 +8,8 @@ img#image-logo-education{
     
     
 }
+
+div#icono-edicion-item-educacion{
+    display: flex;
+    justify-content: end;
+}
