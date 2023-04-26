@@ -7,46 +7,37 @@
         alt="Banner Cavallini Nestor"
     >
 
-    <div class="card-img">
-        
-        <img 
-            src="../../../assets/img/perfil.jpg" 
-            id="profile-picture"    
-            alt="Cavallini Néstor D Foto de Perfil "
-        >
-        
-        <div class="titulo">
-            <h1 
-            class="card-title titulos" 
-            id="name-header"
-        >
-            {{people[0].name + ' '+ people[0].second_name}}
-        </h1>
-            <app-icon-edit class="icon-edit"></app-icon-edit>
-        </div>
-        
-        
-    </div>
+    
 
     <div class="card-columns" id="info-header">
         
-        <div class="col-9">
-            <ul class="list-unstyled" id="list-personal-info">
+        <div class="col-5" id="encabezado">
+            
+            <div class="card-img" id="contenedor-foto">
+        
+                <img 
+                    src="../../../assets/img/perfil.jpg" 
+                    id="profile-picture"    
+                    alt="Cavallini Néstor D Foto de Perfil "
+                >
+                
+                <app-icon-edit id="edit-photo"></app-icon-edit>
+                
+                
+            </div>
+
+            <div id="datos-personales"><ul class="list-unstyled" id="list-personal-info">
+                <li><h1>{{people[0].name + ' '+ people[0].second_name}}</h1></li>
                 <li><h4 class="card-subtitle">{{people[0].position}}</h4></li>
                 <li><h4 class="card-subtitle">{{people[0].location}}</h4></li>
             </ul>
+            <app-icon-edit></app-icon-edit></div>
+            
         </div>
         
-        <div class="col-3">
-            <app-institution></app-institution>
+        <div class="col-7">
+            <app-about></app-about>
         </div>
         
     </div>
-
-    <div class="buttons-header">
-        <app-btn-interest class="item-button"></app-btn-interest>
-        <app-btn-addsection class="item-button"></app-btn-addsection>
-        <app-btn-mas class="item-button"></app-btn-mas>
-    </div>
-
 </div>
