@@ -1,6 +1,6 @@
-import { Component, Output, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PersonaService } from '../../services/persona.service';
 
-import { PEOPLES } from 'src/mock-people';
 import { People } from 'src/People';
 
 @Component({
@@ -8,9 +8,15 @@ import { People } from 'src/People';
   templateUrl: './portfolio-header.component.html',
   styleUrls: ['./portfolio-header.component.css']
 })
-export class PortfolioHeaderComponent {
+export class PortfolioHeaderComponent implements OnInit{
 
-  people: People[] = PEOPLES;
+  people: People[] = [];
 
-  constructor(){}
+  constructor(
+    private personaService: PersonaService
+  ){}
+
+  ngOnInit(): void {
+    this.personaService.getPeoples().subscribe((people) => {this.people = people});
+  }
 }

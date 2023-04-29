@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { PersonaService } from '../../services/persona.service';
 
-import { PEOPLES } from 'src/mock-people';
 import { People } from 'src/People';
 
 @Component({
