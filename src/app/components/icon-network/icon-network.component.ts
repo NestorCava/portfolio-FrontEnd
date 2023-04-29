@@ -10,4 +10,5 @@ export class IconNetworkComponent {
   @Input() padding: string="";
   @Input() icon: string ="";
   @Input() url: string="";
+  @Input() texto: string="";
 }

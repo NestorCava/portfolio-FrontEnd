@@ -30,7 +30,14 @@
                 <li><h1>{{people[0].name + ' '+ people[0].second_name}}</h1></li>
                 <li><h4 class="card-subtitle">{{people[0].position}}</h4></li>
                 <li><h4 class="card-subtitle">{{people[0].location}}</h4></li>
-              
+                <li><app-icon-network
+                    *ngFor="let icon of people[0].networks"
+                    [icon]="icon[0]"
+                    [url]="icon[1]"
+                    padding="15px"
+                    [texto]="icon[1]"
+                >
+                </app-icon-network></li>    
             </ul>
             <app-icon-edit></app-icon-edit></div>
             

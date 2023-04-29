@@ -28,3 +28,12 @@ h1.titulos{
 .icon-edit{
     margin: 5px;
 }
+
+h1{
+    
+    font-weight:bold;
+}
+
+h4{
+    font-size: small;
+}
