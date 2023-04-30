@@ -7,5 +7,6 @@ export interface People {
     location:string,
     networks:string[][],
     about:string,
+    experiencias:string[][],
     educacion:string[],
 }

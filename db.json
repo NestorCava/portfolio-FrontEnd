@@ -17,8 +17,26 @@
                 ]
             ],
             "about": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
+            "experiencias":[
+                [
+                    "../../../assets/img/cavallinisrl_logo.png",
+                    "Cavallini SRL",
+                    "Socio Gerente",
+                    "Marzo 2016",
+                    "Actualidad",
+                    "Gestión empresarial. Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
+                ],
+                [
+                    "../../../assets/img/agustincavallini_logo.png",
+                    "Agustin O. Cavallini",
+                    "Administrativo Técnico, Contable y de RRHH",
+                    "Junio 2006",
+                    "Febrero 2019",
+                    "Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
+                ]
+            ],
             "educacion":[
-                
+
             ]
         }
     ]
