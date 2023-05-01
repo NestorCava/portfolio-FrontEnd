@@ -36,7 +36,22 @@
                 ]
             ],
             "educacion":[
-
+                [
+                    "../../../assets/img/ipet_JuanXXIII_logo.png",
+                    "Bioingeniería",
+                    "FIUNER – Oro Verde – Entre Ríoss",
+                    "Febrero 2006",
+                    "En Curso (98%)",
+                    "Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
+                ],
+                [
+                    "../../../assets/img/ipet_JuanXXIII_logo.png",
+                    "Técnico en Electrónica",
+                    "Esc. Secundaria IPET Juan XXII – Paraná – Entre Ríos",
+                    "Febrero 1999",
+                    "Diciembre 2005",
+                    "Abanderado de la Insignia Nacional"
+                ]
             ]
         }
     ]

@@ -17,7 +17,16 @@
     </div>
     <h1 class="card-title titulos">Educación</h1>
     <div class="container-item">
-        <app-education-item></app-education-item>
+        <app-education-item
+        *ngFor="let e of people[0].educacion"
+        [icono]= "e[0]"
+        [titulo]="e[1]"
+        [institucion]="e[2]"
+        [fecha_inicio]="e[3]"
+        [fecha_fin]="e[4]"
+        [mensiones]="e[5]"
+        >
+        </app-education-item>
     </div>
     
 </div>
