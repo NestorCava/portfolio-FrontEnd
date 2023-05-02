@@ -1,58 +1,43 @@
 {
-    "peoples":[
+  "peoples": [
+    {
+      "id": 1,
+      "name": "Nestor D.",
+      "second_name": "Cavallini",
+      "position": "Desarrollador Full Stack",
+      "location": "Entre Rios, Argentina",
+      "networks": [
+        [
+          "../../../assets/icons/github-logo-24.png",
+          "https://github.com/NestorCava"
+        ],
+        [
+          "../../../assets/icons/linkedin-square-logo-24.png",
+          "https://linkedin.com/in/nestor-daniel-cavallini"
+        ]
+      ],
+      "about": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
+      "experiencias": [],
+      "educacion": [
         {
-            "id":1,
-            "name":"Nestor D.",
-            "second_name":"Cavallini",
-            "position":"Desarrollador Full Stack",
-            "location":"Entre Rios, Argentina",
-            "networks":[
-                [
-                    "../../../assets/icons/github-logo-24.png",
-                    "https://github.com/NestorCava"
-                ],
-                [
-                    "../../../assets/icons/linkedin-square-logo-24.png",
-                    "https://linkedin.com/in/nestor-daniel-cavallini"
-                ]
-            ],
-            "about": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
-            "experiencias":[
-                [
-                    "../../../assets/img/cavallinisrl_logo.png",
-                    "Cavallini SRL",
-                    "Socio Gerente",
-                    "Marzo 2016",
-                    "Actualidad",
-                    "Gestión empresarial. Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
-                ],
-                [
-                    "../../../assets/img/agustincavallini_logo.png",
-                    "Agustin O. Cavallini",
-                    "Administrativo Técnico, Contable y de RRHH",
-                    "Junio 2006",
-                    "Febrero 2019",
-                    "Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
-                ]
-            ],
-            "educacion":[
-                [
-                    "../../../assets/img/ipet_JuanXXIII_logo.png",
-                    "Bioingeniería",
-                    "FIUNER – Oro Verde – Entre Ríoss",
-                    "Febrero 2006",
-                    "En Curso (98%)",
-                    "Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
-                ],
-                [
-                    "../../../assets/img/ipet_JuanXXIII_logo.png",
-                    "Técnico en Electrónica",
-                    "Esc. Secundaria IPET Juan XXII – Paraná – Entre Ríos",
-                    "Febrero 1999",
-                    "Diciembre 2005",
-                    "Abanderado de la Insignia Nacional"
-                ]
-            ]
+          "id": 1,
+          "icono": "../../../assets/img/ipet_JuanXXIII_logo.png",
+          "titulo": "Bioingeniería",
+          "institucion": "FIUNER – Oro Verde – Entre Ríoss",
+          "fecha_inicio": "Febrero 2006",
+          "fecha_fin": "En Curso (98%)",
+          "mensiones": "Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
+        },
+        {
+          "id": 2,
+          "icono": "../../../assets/img/ipet_JuanXXIII_logo.png",
+          "titulo": "Técnico en Electrónica",
+          "institucion": "Esc. Secundaria IPET Juan XXII – Paraná – Entre Ríos",
+          "fecha_inicio": "Febrero 1999",
+          "fecha_fin": "Diciembre 2005",
+          "mensiones": "Abanderado de la Insignia Nacional"
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { PEOPLE, People } from '../../../People';
 
@@ -11,9 +11,14 @@ export class PortfolioHeaderComponent implements OnInit{
 
   @Input() people: People = PEOPLE;
 
+  @Output() deleteAboutPersona: EventEmitter<People> = new EventEmitter();
+ 
+
   constructor(){}
 
   ngOnInit(): void {}
 
-  
+  deleteAbout(people: People){
+    this.deleteAboutPersona.emit(this.people);
+  }
 }

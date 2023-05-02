@@ -1,8 +1,8 @@
 //import { Component } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PersonaService } from '../app/services/persona.service';
 
-import { People } from 'src/People';
+import { PEOPLE, People, Experiencia } from 'src/People';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,8 @@ import { People } from 'src/People';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+
+  @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
   title = 'portfolio-frontend';
 
   peoples: People[] = [];
@@ -21,5 +23,13 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.personaService.getPeoples().subscribe((peoples) => {this.peoples = peoples});
+  }
+
+  deleteAbout(people:People){
+    this.personaService.deleteAbout(people).subscribe();
+  }
+
+  deleteExperiencia(people: People){
+    this.personaService.deleteExperiencia(people).subscribe();
   }
 }

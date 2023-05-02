@@ -6,25 +6,20 @@
     <div class="container-item">
         <app-experience-item
         *ngFor="let experiencia of people.experiencias"
-        [icono]= "experiencia[0]"
-        [empresa]="experiencia[1]"
-        [cargo]="experiencia[2]"
-        [fecha_inicio]="experiencia[3]"
-        [fecha_fin]="experiencia[4]"
-        [descripcion]="experiencia[5]"
-        >
-        </app-experience-item>
+        [experiencia]= "experiencia"
+        (onDeleteExperiencia)="deleteExperiencia(experiencia)"
+        ></app-experience-item>
     </div>
     <h1 class="card-title titulos">Educación</h1>
     <div class="container-item">
         <app-education-item
         *ngFor="let e of people.educacion"
-        [icono]= "e[0]"
-        [titulo]="e[1]"
-        [institucion]="e[2]"
-        [fecha_inicio]="e[3]"
-        [fecha_fin]="e[4]"
-        [mensiones]="e[5]"
+        [icono]= "e.icono"
+        [titulo]="e.titulo"
+        [institucion]="e.institucion"
+        [fecha_inicio]="e.fecha_inicio"
+        [fecha_fin]="e.fecha_fin"
+        [mensiones]="e.mensiones"
         >
         </app-education-item>
     </div>

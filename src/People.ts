@@ -7,8 +7,28 @@ export interface People {
     location:string,
     networks:string[][],
     about:string,
-    experiencias:string[][],
-    educacion:string[],
+    experiencias:Experiencia[],
+    educacion:Educacion[],
+}
+
+export interface Experiencia {
+    id?:number,
+    icono:string,
+    empresa:string,
+    cargo:string,
+    fecha_inicio:string,
+    fecha_fin:string,
+    descripcion:string,
+}
+
+export interface Educacion{
+    id?:number,
+    icono:string,
+    titulo:string,
+    institucion:string,
+    fecha_inicio:string,
+    fecha_fin:string,
+    mensiones:string,
 }
 
 export const PEOPLE: People ={
@@ -20,6 +40,6 @@ export const PEOPLE: People ={
     location:"string",
     networks:[["string","string"],["string","string"]],
     about:'string',
-    experiencias:[["string","string"],["string","string"]],
-    educacion:['string'],
+    experiencias:[],
+    educacion:[],
 }

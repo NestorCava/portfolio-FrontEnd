@@ -44,7 +44,10 @@
         </div>
         
         <div class="col-7">
-            <app-about>
+            <app-about 
+                [people]="people"
+                (onDeleteAbout)="deleteAbout(people)"
+            >
                 
             </app-about>
         </div>

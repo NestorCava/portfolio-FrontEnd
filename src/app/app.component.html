@@ -1,1 +1,5 @@
-<app-persona [people]="peoples[id_persona]"></app-persona>
+<app-persona 
+    [people]="peoples[id_persona]"
+    (deleteAboutPersona)="deleteAbout(peoples[id_persona])"
+    (deleteExperienciaPersona)="deleteExperiencia(peoples[id_persona])"
+></app-persona>

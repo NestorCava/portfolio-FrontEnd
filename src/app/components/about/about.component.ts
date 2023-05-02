@@ -1,7 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { PersonaService } from '../../services/persona.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { People } from 'src/People';
+import { PEOPLE, People } from 'src/People';
 
 @Component({
   selector: 'app-about',
@@ -9,20 +8,16 @@ import { People } from 'src/People';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit{
+
+  @Input() people: People = PEOPLE;
   @Output() onDeleteAbout: EventEmitter<People> = new EventEmitter();
 
-  people: People[] = [];
+  constructor(){}
 
-  constructor(
-    private personaService: PersonaService
-  ){}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((people) => {this.people = people});
-  }
-
-  onDelete(){
-    console.log();
-    this.onDeleteAbout.emit(this.people[0]);
+  onDelete(people: People){
+    people.about="";
+    this.onDeleteAbout.emit(this.people);
   }
 }

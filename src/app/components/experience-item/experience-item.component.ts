@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { Experiencia, PEOPLE } from 'src/People';
 
 @Component({
   selector: 'app-experience-item',
@@ -7,11 +9,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ExperienceItemComponent {
 
-  @Input() icono: string ="";
-  @Input() empresa: string ="";
-  @Input() cargo: string ="";
-  @Input() fecha_inicio: string ="";
-  @Input() fecha_fin: string ="";
-  @Input() descripcion: string ="";
+  @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
+  @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter();
+
+  constructor(){}
+
+  onDelete(experiencia: Experiencia){
+    this.onDeleteExperiencia.emit(experiencia);
+  }
 
 }

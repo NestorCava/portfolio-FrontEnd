@@ -4,13 +4,12 @@
         <div class="iconos-edicion">
             <app-icon-edit class="icon-edit"></app-icon-edit>
             <app-icon-delete
-                (click)="onDelete()"
+                (click)="onDelete(people)"
             >
             </app-icon-delete>
         </div>
         
     </div>
     
-    
-    <p class="card-text" id="about-paragraph">{{people[0].about}}</p>
+    <p class="card-text" id="about-paragraph">{{people.about}}</p>
 </div>
