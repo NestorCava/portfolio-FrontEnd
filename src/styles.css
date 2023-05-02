@@ -37,3 +37,8 @@ h1{
 h4{
     font-size: small;
 }
+
+div.iconos-edicion{
+    display: flex;
+    align-items: center;
+}

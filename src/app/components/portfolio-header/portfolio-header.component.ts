@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PersonaService } from '../../services/persona.service';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { People } from 'src/People';
+import { PEOPLE, People } from '../../../People';
 
 @Component({
   selector: 'app-portfolio-header',
@@ -10,13 +9,11 @@ import { People } from 'src/People';
 })
 export class PortfolioHeaderComponent implements OnInit{
 
-  people: People[] = [];
+  @Input() people: People = PEOPLE;
 
-  constructor(
-    private personaService: PersonaService
-  ){}
+  constructor(){}
 
-  ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((people) => {this.people = people});
-  }
+  ngOnInit(): void {}
+
+  
 }

@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { PersonaService } from '../../services/persona.service';
-
-import { People } from 'src/People';
+import { PEOPLE, People } from 'src/People';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +9,9 @@ import { People } from 'src/People';
 })
 export class HeaderComponent implements OnInit{
 
-  people: People[] = [];
+  @Input() people: People = PEOPLE;
 
-  constructor(
-    private personaService: PersonaService
-  ){}
+  constructor(){}
   
-  ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((people) => {this.people = people});
-  }
+  ngOnInit(): void {}
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { PEOPLE, People } from 'src/People';
 
 @Component({
   selector: 'app-projects',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
 
+  @Input() people: People = PEOPLE;
 }

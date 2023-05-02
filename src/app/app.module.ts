@@ -20,6 +20,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 import { IconEditComponent } from './components/icon-edit/icon-edit.component';
+import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
+import { PersonaComponent } from './components/persona/persona.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { IconEditComponent } from './components/icon-edit/icon-edit.component';
     ProjectsComponent,
     SkillsComponent,
     SkillsItemComponent,
-    IconEditComponent
+    IconEditComponent,
+    IconDeleteComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,

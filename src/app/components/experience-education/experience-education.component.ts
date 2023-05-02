@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PersonaService } from '../../services/persona.service';
+import { Component, OnInit, Input } from '@angular/core';
 
-import { People } from 'src/People';
+import { PEOPLE, People } from 'src/People';
 
 @Component({
   selector: 'app-experience-education',
@@ -9,13 +8,9 @@ import { People } from 'src/People';
   styleUrls: ['./experience-education.component.css']
 })
 export class ExperienceEducationComponent implements OnInit{
-  people: People[] = [];
+  @Input() people: People = PEOPLE;
 
-  constructor(
-    private personaService: PersonaService
-  ){}
+  constructor(){}
 
-  ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((people) => {this.people = people});
-  }
+  ngOnInit(): void {}
 }

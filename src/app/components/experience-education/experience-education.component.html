@@ -5,7 +5,7 @@
     
     <div class="container-item">
         <app-experience-item
-        *ngFor="let experiencia of people[0].experiencias"
+        *ngFor="let experiencia of people.experiencias"
         [icono]= "experiencia[0]"
         [empresa]="experiencia[1]"
         [cargo]="experiencia[2]"
@@ -18,7 +18,7 @@
     <h1 class="card-title titulos">Educación</h1>
     <div class="container-item">
         <app-education-item
-        *ngFor="let e of people[0].educacion"
+        *ngFor="let e of people.educacion"
         [icono]= "e[0]"
         [titulo]="e[1]"
         [institucion]="e[2]"

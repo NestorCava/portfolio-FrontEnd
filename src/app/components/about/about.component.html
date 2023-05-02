@@ -1,7 +1,14 @@
 <div>
     <div class="titulo">
         <h1 class="card-title titulos">Acerca de</h1>
-        <app-icon-edit class="icon-edit"></app-icon-edit>
+        <div class="iconos-edicion">
+            <app-icon-edit class="icon-edit"></app-icon-edit>
+            <app-icon-delete
+                (click)="onDelete()"
+            >
+            </app-icon-delete>
+        </div>
+        
     </div>
     
     

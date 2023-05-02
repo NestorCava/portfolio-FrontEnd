@@ -1,9 +1,9 @@
 <header class="container-header">
-    <h1 class="card-title"> Cavallini Nestor Daniel</h1>
+    <h1 class="card-title"> {{people.second_name + " " + people.name}}</h1>
 
     <div class="icons">
         <app-icon-network
-            *ngFor="let icon of people[0].networks"
+            *ngFor="let icon of people.networks"
             [icon]="icon[0]"
             [url]="icon[1]"
             padding="15px"
