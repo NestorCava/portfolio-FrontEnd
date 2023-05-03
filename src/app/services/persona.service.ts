@@ -31,7 +31,7 @@ export class PersonaService {
     return this.http.put<People>(url,people,httpOptions);
   }
 
-  deleteExperiencia(people: People):Observable<People>{
+  update(people: People):Observable<People>{
     const url = `${this.apiUrl}/${people.id}`;
     return this.http.put<People>(url,people,httpOptions);
   }

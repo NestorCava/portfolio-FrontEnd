@@ -13,8 +13,7 @@ export class PersonaComponent implements OnInit{
   @Input() people: People = PEOPLE;
   @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
 
-  @Output() deleteAboutPersona: EventEmitter<People> = new EventEmitter();
-  @Output() deleteExperienciaPersona: EventEmitter<People> = new EventEmitter();
+  @Output() updatePersona: EventEmitter<People> = new EventEmitter();
 
   constructor(
     private personaService: PersonaService
@@ -23,11 +22,7 @@ export class PersonaComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  deleteAbout(people:People){
-    this.deleteAboutPersona.emit(this.people);
-  }
-
-  deleteExperiencia(people: People){
-    this.deleteExperienciaPersona.emit(people);
+  update(people: People){
+    this.updatePersona.emit(people);
   }
 }

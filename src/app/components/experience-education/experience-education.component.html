@@ -14,12 +14,8 @@
     <div class="container-item">
         <app-education-item
         *ngFor="let e of people.educacion"
-        [icono]= "e.icono"
-        [titulo]="e.titulo"
-        [institucion]="e.institucion"
-        [fecha_inicio]="e.fecha_inicio"
-        [fecha_fin]="e.fecha_fin"
-        [mensiones]="e.mensiones"
+        [educacion]= "e"
+        (onDeleteEducacion)="deleteEducacion(e)"
         >
         </app-education-item>
     </div>

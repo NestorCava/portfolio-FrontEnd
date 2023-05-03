@@ -5,11 +5,11 @@
     <div class="portfolio">
       <app-portfolio-header 
         [people]="people"
-        (deleteAboutPersona)="deleteAbout(people)"
+        (updatePersona)="update(people)"
       ></app-portfolio-header>
       <app-experience-education 
         [people]="people"
-        (deleteExperienciaPersona)="deleteExperiencia(people)"
+        (updatePersona)="update(people)"
       ></app-experience-education>
       <app-skills [people]="people"></app-skills>
       <app-projects [people]="people"></app-projects>

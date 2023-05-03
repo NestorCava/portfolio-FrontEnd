@@ -17,16 +17,35 @@
         ]
       ],
       "about": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
-      "experiencias": [],
+      "experiencias": [
+        {
+          "id":1,
+          "icono":"../../../assets/img/cavallinisrl_logo.png",
+          "empresa":"Cavallini SRL",
+          "cargo":"Socio Gerente",
+          "fecha_inicio":"Marzo 2016",
+          "fecha_fin":"Actualidad",
+          "descripcion":"Gestión empresarial. Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
+        },
+        {
+          "id": 2,
+          "icono": "../../../assets/img/agustincavallini_logo.png",
+          "empresa": "Agustin O. Cavallini",
+          "cargo": "Administrativo Técnico, Contable y de RRHH",
+          "fecha_inicio": "Junio 2006",
+          "fecha_fin": "Febrero 2019",
+          "descripcion": "Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
+        }
+      ],
       "educacion": [
         {
-          "id": 1,
-          "icono": "../../../assets/img/ipet_JuanXXIII_logo.png",
-          "titulo": "Bioingeniería",
-          "institucion": "FIUNER – Oro Verde – Entre Ríoss",
-          "fecha_inicio": "Febrero 2006",
-          "fecha_fin": "En Curso (98%)",
-          "mensiones": "Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
+          "id":1,
+          "icono":"../../../assets/img/ipet_JuanXXIII_logo.png",
+          "titulo":"Bioingeniería",
+          "institucion":"FIUNER – Oro Verde – Entre Ríoss",
+          "fecha_inicio":"Febrero 2006",
+          "fecha_fin":"En Curso (98%)",
+          "mensiones":"Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
         },
         {
           "id": 2,

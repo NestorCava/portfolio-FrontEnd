@@ -11,7 +11,7 @@ export class PortfolioHeaderComponent implements OnInit{
 
   @Input() people: People = PEOPLE;
 
-  @Output() deleteAboutPersona: EventEmitter<People> = new EventEmitter();
+  @Output() updatePersona: EventEmitter<People> = new EventEmitter();
  
 
   constructor(){}
@@ -19,6 +19,6 @@ export class PortfolioHeaderComponent implements OnInit{
   ngOnInit(): void {}
 
   deleteAbout(people: People){
-    this.deleteAboutPersona.emit(this.people);
+    this.updatePersona.emit(this.people);
   }
 }

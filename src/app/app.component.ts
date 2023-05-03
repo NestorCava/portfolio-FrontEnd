@@ -12,6 +12,7 @@ import { PEOPLE, People, Experiencia } from 'src/People';
 export class AppComponent implements OnInit{
 
   @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
+  
   title = 'portfolio-frontend';
 
   peoples: People[] = [];
@@ -25,11 +26,7 @@ export class AppComponent implements OnInit{
     this.personaService.getPeoples().subscribe((peoples) => {this.peoples = peoples});
   }
 
-  deleteAbout(people:People){
-    this.personaService.deleteAbout(people).subscribe();
-  }
-
-  deleteExperiencia(people: People){
-    this.personaService.deleteExperiencia(people).subscribe();
+  update(people: People){
+    this.personaService.update(people).subscribe();
   }
 }

@@ -1,7 +1,9 @@
 <div id="icono-edicion-item-educacion" style="max-width: 720px;">
   <div class="iconos-edicion">
     <app-icon-edit class="icon-edit"></app-icon-edit>
-    <app-icon-delete></app-icon-delete>
+    <app-icon-delete
+      (click)="onDelete(educacion)"
+    ></app-icon-delete>
 </div>
 </div>
 <div class="card mb-3" style="max-width: 720px;">
@@ -9,14 +11,18 @@
     <div class="row g-0">
       
       <div class="col-md-4" id="div-logo-education">
-        <img id="image-logo-education" src={{icono}} class="img-fluid rounded-3" alt={{icono}}>
+        <img 
+          id="image-logo-education" 
+          src={{educacion.icono}} 
+          class="img-fluid rounded-3" 
+          alt={{educacion.icono}}>
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-title" id="titulo-educacion">{{titulo}}</h3>
-          <h5 class="card-title">{{institucion}}</h5>
-          <p class="card-text">{{fecha_inicio + " - " + fecha_fin}}</p>
-          <p class="card-text"><small class="text-muted">{{mensiones}}</small></p>
+          <h3 class="card-title" id="titulo-educacion">{{educacion.titulo}}</h3>
+          <h5 class="card-title">{{educacion.institucion}}</h5>
+          <p class="card-text">{{educacion.fecha_inicio + " - " + educacion.fecha_fin}}</p>
+          <p class="card-text"><small class="text-muted">{{educacion.mensiones}}</small></p>
         </div>
       </div>
       

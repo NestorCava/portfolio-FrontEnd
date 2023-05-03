@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { PEOPLE, People, Experiencia } from 'src/People';
+import { PEOPLE, People, Experiencia, Educacion } from 'src/People';
 
 @Component({
   selector: 'app-experience-education',
@@ -9,7 +9,7 @@ import { PEOPLE, People, Experiencia } from 'src/People';
 })
 export class ExperienceEducationComponent implements OnInit{
   @Input() people: People = PEOPLE;
-  @Output() deleteExperienciaPersona: EventEmitter<People> = new EventEmitter();
+  @Output() updatePersona: EventEmitter<People> = new EventEmitter();
 
   constructor(){}
 
@@ -18,8 +18,12 @@ export class ExperienceEducationComponent implements OnInit{
   deleteExperiencia(experiencia: Experiencia){
 
     this.people.experiencias = this.people.experiencias.filter(e => e.id !== experiencia.id)
-    this.deleteExperienciaPersona.emit(this.people);
+    this.updatePersona.emit(this.people);
+  }
 
-    //() => {this.people.experiencias = this.people.experiencias.filter(e => e.id !== experiencia.id)}
+  deleteEducacion(educacion: Educacion){
+
+    this.people.educacion = this.people.educacion.filter(e => e.id !== educacion.id)
+    this.updatePersona.emit(this.people);
   }
 }
