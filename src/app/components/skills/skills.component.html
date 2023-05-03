@@ -4,8 +4,14 @@
         <app-icon-edit class="icon-edit"></app-icon-edit>
     </div>
     
-    <div class="container-skills-item">
-        <app-skills-item></app-skills-item>
+    <div class="container-skills-item row">
+        <app-skills-item 
+            class="col-2"
+            *ngFor="let skill of persona.skills"
+            [skill]="skill"
+            (onDeleteSkill)="deleteSkill(skill)"
+        ></app-skills-item>
+        
     </div>
-    
+  
 </div>

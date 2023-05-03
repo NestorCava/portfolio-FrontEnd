@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { PERSONA, Persona } from 'src/People';
+import { PERSONA, Persona, Skill } from 'src/People';
 
 @Component({
   selector: 'app-skills',
@@ -10,4 +10,16 @@ import { PERSONA, Persona } from 'src/People';
 export class SkillsComponent {
 
   @Input() persona: Persona = PERSONA;
+  @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
+
+  constructor(){}
+
+  ngOnInit(): void {}
+
+  deleteSkill(skill: Skill){
+
+    this.persona.skills = this.persona.skills.filter(sk => sk.id !== skill.id)
+    this.updatePersona.emit(this.persona);
+  }
+  
 }

@@ -1,4 +1,28 @@
-<h5 class="card-title">Python</h5>
-<div class="progress">        
-    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+<div class="skill-item">
+    
+    <circle-progress
+        [percent]="skill.porcentaje"
+        [subtitle]="skill.skill"
+        
+        [showTitle]="true"
+        [radius]="75"
+        [outerStrokeWidth]="6"
+        [innerStrokeWidth]="4"
+        [outerStrokeColor]="'#6d7bb0'"
+        [innerStrokeColor]="'#C7E596'"
+        [responsive]="true"
+        [animation]="true"
+        [animationDuration]="300"
+    ></circle-progress>    
+    <div class="iconos-edicion">
+        <app-icon-edit 
+            class="icon-edit"
+        ></app-icon-edit>
+        <app-icon-delete
+        (click)="onDelete(skill)"  
+        ></app-icon-delete>
+      </div>
 </div>
+
+
+ 

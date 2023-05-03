@@ -56,6 +56,43 @@
           "fecha_fin": "Diciembre 2005",
           "mensiones": "Abanderado de la Insignia Nacional"
         }
+      ],
+      "skills": [
+        {
+          "id": 1,
+          "skill":"Python",
+          "porcentaje":75
+        },
+        {
+          "id": 2,
+          "skill": "Java",
+          "porcentaje": 70
+        },
+        {
+          "id": 3,
+          "skill": "GIT",
+          "porcentaje": 60
+        },
+        {
+          "id": 4,
+          "skill": "HTML",
+          "porcentaje": 60
+        },
+        {
+          "id": 5,
+          "skill": "CSS",
+          "porcentaje": 60
+        },
+        {
+          "id": 6,
+          "skill": "TS",
+          "porcentaje": 50
+        },
+        {
+          "id": 7,
+          "skill": "SCRUM",
+          "porcentaje": 50
+        }
       ]
     }
   ]

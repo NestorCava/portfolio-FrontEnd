@@ -9,6 +9,7 @@ export interface Persona {
     acerca:string,
     experiencias:Experiencia[],
     educacion:Educacion[],
+    skills:Skill[],
 }
 
 export interface Experiencia {
@@ -31,6 +32,13 @@ export interface Educacion{
     mensiones:string,
 }
 
+export interface Skill{
+    
+    id: number,
+    skill:string,
+    porcentaje:number
+}
+
 export const PERSONA: Persona ={
 
     id:0, //Cuando creamos podria no venir
@@ -42,4 +50,5 @@ export const PERSONA: Persona ={
     acerca:'string',
     experiencias:[],
     educacion:[],
+    skills:[],
 }

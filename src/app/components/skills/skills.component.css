@@ -1,3 +1,5 @@
 div.container-skills-item{
-    padding-left: 30px;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 10px;
 }

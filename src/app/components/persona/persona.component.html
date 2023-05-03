@@ -7,12 +7,20 @@
         [persona]="persona"
         (updatePersona)="update(persona)"
       ></app-portfolio-header>
+
       <app-experience-education 
         [persona]="persona"
         (updatePersona)="update(persona)"
       ></app-experience-education>
-      <app-skills [persona]="persona"></app-skills>
-      <app-projects [persona]="persona"></app-projects>
+
+      <app-skills 
+        [persona]="persona"
+        (updatePersona)="update(persona)"
+      ></app-skills>
+
+      <app-projects 
+        [persona]="persona"
+      ></app-projects>
     </div>
   
   </div>

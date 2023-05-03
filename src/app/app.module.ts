@@ -5,7 +5,6 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { IconNetworkComponent } from './components/icon-network/icon-network.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconUserComponent } from './components/icon-user/icon-user.component';
 import { PortfolioHeaderComponent } from './components/portfolio-header/portfolio-header.component';
 import { InstitutionComponent } from './components/institution/institution.component';
@@ -22,6 +21,10 @@ import { SkillsItemComponent } from './components/skills-item/skills-item.compon
 import { IconEditComponent } from './components/icon-edit/icon-edit.component';
 import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
 import { PersonaComponent } from './components/persona/persona.component';
+import { SkillItemComponent } from './components/skill-item/skill-item.component';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -43,12 +46,14 @@ import { PersonaComponent } from './components/persona/persona.component';
     SkillsItemComponent,
     IconEditComponent,
     IconDeleteComponent,
-    PersonaComponent
+    PersonaComponent,
+    SkillItemComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
