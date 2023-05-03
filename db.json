@@ -1,12 +1,12 @@
 {
-  "peoples": [
+  "personas": [
     {
       "id": 1,
-      "name": "Nestor D.",
-      "second_name": "Cavallini",
-      "position": "Desarrollador Full Stack",
-      "location": "Entre Rios, Argentina",
-      "networks": [
+      "nombre": "Nestor D.",
+      "apellido": "Cavallini",
+      "posicion": "Desarrollador Full Stack",
+      "localidad": "Entre Rios, Argentina",
+      "redes": [
         [
           "../../../assets/icons/github-logo-24.png",
           "https://github.com/NestorCava"
@@ -16,16 +16,16 @@
           "https://linkedin.com/in/nestor-daniel-cavallini"
         ]
       ],
-      "about": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
+      "acerca": "Me apasiona la tecnología y el desarrollo de software. Mi objetivo es seguir ingresando en el mundo IT. En la búsqueda de nuevos desafíos, con las ganas de continuar con mi crecimiento personal. Consciente de que el trabajo en equipo, colaborativo y participativo es el camino del éxito.",
       "experiencias": [
         {
-          "id":1,
-          "icono":"../../../assets/img/cavallinisrl_logo.png",
-          "empresa":"Cavallini SRL",
-          "cargo":"Socio Gerente",
-          "fecha_inicio":"Marzo 2016",
-          "fecha_fin":"Actualidad",
-          "descripcion":"Gestión empresarial. Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
+          "id": 1,
+          "icono": "../../../assets/img/cavallinisrl_logo.png",
+          "empresa": "Cavallini SRL",
+          "cargo": "Socio Gerente",
+          "fecha_inicio": "Marzo 2016",
+          "fecha_fin": "Actualidad",
+          "descripcion": "Gestión empresarial. Realización de presupuestos, certificaciones y seguimientos de obra. Responsable de la sección de RRHH."
         },
         {
           "id": 2,
@@ -39,13 +39,13 @@
       ],
       "educacion": [
         {
-          "id":1,
-          "icono":"../../../assets/img/ipet_JuanXXIII_logo.png",
-          "titulo":"Bioingeniería",
-          "institucion":"FIUNER – Oro Verde – Entre Ríoss",
-          "fecha_inicio":"Febrero 2006",
-          "fecha_fin":"En Curso (98%)",
-          "mensiones":"Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
+          "id": 1,
+          "icono": "../../../assets/img/ipet_JuanXXIII_logo.png",
+          "titulo": "Bioingeniería",
+          "institucion": "FIUNER – Oro Verde – Entre Ríoss",
+          "fecha_inicio": "Febrero 2006",
+          "fecha_fin": "En Curso (98%)",
+          "mensiones": "Diseño e Implementación de un dispositivo de medición del tiempo de reacción ante estímulos visuales. Exposición en el Congreso SABI 2013"
         },
         {
           "id": 2,

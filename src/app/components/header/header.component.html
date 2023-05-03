@@ -1,11 +1,11 @@
 <header class="container-header">
-    <h1 class="card-title"> {{people.second_name + " " + people.name}}</h1>
+    <h1 class="card-title"> {{persona.apellido + " " + persona.nombre}}</h1>
 
     <div class="icons">
         <app-icon-network
-            *ngFor="let icon of people.networks"
-            [icon]="icon[0]"
-            [url]="icon[1]"
+            *ngFor="let icono of persona.redes"
+            [icon]="icono[0]"
+            [url]="icono[1]"
             padding="15px"
         >
         </app-icon-network>

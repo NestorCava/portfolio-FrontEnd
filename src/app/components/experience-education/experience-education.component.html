@@ -5,7 +5,7 @@
     
     <div class="container-item">
         <app-experience-item
-        *ngFor="let experiencia of people.experiencias"
+        *ngFor="let experiencia of persona.experiencias"
         [experiencia]= "experiencia"
         (onDeleteExperiencia)="deleteExperiencia(experiencia)"
         ></app-experience-item>
@@ -13,7 +13,7 @@
     <h1 class="card-title titulos">Educación</h1>
     <div class="container-item">
         <app-education-item
-        *ngFor="let e of people.educacion"
+        *ngFor="let e of persona.educacion"
         [educacion]= "e"
         (onDeleteEducacion)="deleteEducacion(e)"
         >

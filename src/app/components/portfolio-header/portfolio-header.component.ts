@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { PEOPLE, People } from '../../../People';
+import { PERSONA, Persona } from '../../../People';
 
 @Component({
   selector: 'app-portfolio-header',
@@ -9,16 +9,16 @@ import { PEOPLE, People } from '../../../People';
 })
 export class PortfolioHeaderComponent implements OnInit{
 
-  @Input() people: People = PEOPLE;
+  @Input() persona: Persona = PERSONA;
 
-  @Output() updatePersona: EventEmitter<People> = new EventEmitter();
+  @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
  
 
   constructor(){}
 
   ngOnInit(): void {}
 
-  deleteAbout(people: People){
-    this.updatePersona.emit(this.people);
+  deleteAbout(persona: Persona){
+    this.updatePersona.emit(this.persona);
   }
 }

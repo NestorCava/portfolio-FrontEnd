@@ -2,7 +2,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PersonaService } from '../app/services/persona.service';
 
-import { PEOPLE, People, Experiencia } from 'src/People';
+import { PERSONA, Persona, Experiencia } from 'src/People';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,11 @@ import { PEOPLE, People, Experiencia } from 'src/People';
 })
 export class AppComponent implements OnInit{
 
-  @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
+  @Input() experiencia: Experiencia = PERSONA.experiencias[0];
   
   title = 'portfolio-frontend';
 
-  peoples: People[] = [];
+  personas: Persona[] = [];
   id_persona = 0;
 
   constructor(
@@ -23,10 +23,10 @@ export class AppComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((peoples) => {this.peoples = peoples});
+    this.personaService.getPeoples().subscribe((personas) => {this.personas = personas});
   }
 
-  update(people: People){
-    this.personaService.update(people).subscribe();
+  update(persona: Persona){
+    this.personaService.update(persona).subscribe();
   }
 }

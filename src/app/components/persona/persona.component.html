@@ -1,18 +1,18 @@
 <div class="container-fluid">
 
-    <app-header [people]="people"></app-header>
+    <app-header [persona]="persona"></app-header>
   
     <div class="portfolio">
       <app-portfolio-header 
-        [people]="people"
-        (updatePersona)="update(people)"
+        [persona]="persona"
+        (updatePersona)="update(persona)"
       ></app-portfolio-header>
       <app-experience-education 
-        [people]="people"
-        (updatePersona)="update(people)"
+        [persona]="persona"
+        (updatePersona)="update(persona)"
       ></app-experience-education>
-      <app-skills [people]="people"></app-skills>
-      <app-projects [people]="people"></app-projects>
+      <app-skills [persona]="persona"></app-skills>
+      <app-projects [persona]="persona"></app-projects>
     </div>
   
   </div>

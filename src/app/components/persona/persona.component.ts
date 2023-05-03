@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PersonaService } from '../../services/persona.service';
 
-import { PEOPLE, People, Experiencia } from 'src/People';
+import { PERSONA, Persona, Experiencia } from 'src/People';
 
 @Component({
   selector: 'app-persona',
@@ -10,10 +10,10 @@ import { PEOPLE, People, Experiencia } from 'src/People';
 })
 export class PersonaComponent implements OnInit{
 
-  @Input() people: People = PEOPLE;
-  @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
+  @Input() persona: Persona = PERSONA;
+  @Input() experiencia: Experiencia = PERSONA.experiencias[0];
 
-  @Output() updatePersona: EventEmitter<People> = new EventEmitter();
+  @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
 
   constructor(
     private personaService: PersonaService
@@ -22,7 +22,7 @@ export class PersonaComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  update(people: People){
-    this.updatePersona.emit(people);
+  update(persona: Persona){
+    this.updatePersona.emit(persona);
   }
 }

@@ -27,15 +27,15 @@
             </div>
 
             <div id="datos-personales"><ul class="list-unstyled" id="list-personal-info">
-                <li><h1>{{people.name + ' '+ people.second_name}}</h1></li>
-                <li><h4 class="card-subtitle">{{people.position}}</h4></li>
-                <li><h4 class="card-subtitle">{{people.location}}</h4></li>
+                <li><h1>{{persona.nombre + ' '+ persona.apellido}}</h1></li>
+                <li><h4 class="card-subtitle">{{persona.posicion}}</h4></li>
+                <li><h4 class="card-subtitle">{{persona.localidad}}</h4></li>
                 <li><app-icon-network
-                    *ngFor="let icon of people.networks"
-                    [icon]="icon[0]"
-                    [url]="icon[1]"
+                    *ngFor="let icono of persona.redes"
+                    [icon]="icono[0]"
+                    [url]="icono[1]"
                     padding="15px"
-                    [texto]="icon[1]"
+                    [texto]="icono[1]"
                 >
                 </app-icon-network></li>    
             </ul>
@@ -45,8 +45,8 @@
         
         <div class="col-7">
             <app-about 
-                [people]="people"
-                (onDeleteAbout)="deleteAbout(people)"
+                [persona]="persona"
+                (onDeleteAbout)="deleteAbout(persona)"
             >
                 
             </app-about>

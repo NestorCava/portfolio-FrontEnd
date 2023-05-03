@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { PEOPLE, People } from 'src/People';
+import { PERSONA, Persona } from 'src/People';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import { PEOPLE, People } from 'src/People';
 })
 export class HeaderComponent implements OnInit{
 
-  @Input() people: People = PEOPLE;
+  @Input() persona: Persona = PERSONA;
 
   constructor(){}
   

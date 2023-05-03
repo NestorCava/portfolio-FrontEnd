@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { PEOPLE, People } from 'src/People';
+import { PERSONA, Persona } from 'src/People';
 
 @Component({
   selector: 'app-about',
@@ -9,15 +9,15 @@ import { PEOPLE, People } from 'src/People';
 })
 export class AboutComponent implements OnInit{
 
-  @Input() people: People = PEOPLE;
-  @Output() onDeleteAbout: EventEmitter<People> = new EventEmitter();
+  @Input() persona: Persona = PERSONA;
+  @Output() onDeleteAbout: EventEmitter<Persona> = new EventEmitter();
 
   constructor(){}
 
   ngOnInit(): void {}
 
-  onDelete(people: People){
-    people.about="";
-    this.onDeleteAbout.emit(this.people);
+  onDelete(persona: Persona){
+    persona.acerca="";
+    this.onDeleteAbout.emit(this.persona);
   }
 }

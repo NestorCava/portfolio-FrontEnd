@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { PEOPLE, People } from 'src/People';
+import { PERSONA, Persona } from 'src/People';
 
 @Component({
   selector: 'app-skills',
@@ -9,5 +9,5 @@ import { PEOPLE, People } from 'src/People';
 })
 export class SkillsComponent {
 
-  @Input() people: People = PEOPLE;
+  @Input() persona: Persona = PERSONA;
 }

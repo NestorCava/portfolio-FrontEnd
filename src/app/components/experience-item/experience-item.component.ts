@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Experiencia, PEOPLE } from 'src/People';
+import { Experiencia, PERSONA } from 'src/People';
 
 @Component({
   selector: 'app-experience-item',
@@ -9,7 +9,7 @@ import { Experiencia, PEOPLE } from 'src/People';
 })
 export class ExperienceItemComponent {
 
-  @Input() experiencia: Experiencia = PEOPLE.experiencias[0];
+  @Input() experiencia: Experiencia = PERSONA.experiencias[0];
   @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter();
 
   constructor(){}

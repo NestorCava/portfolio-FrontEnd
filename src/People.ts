@@ -1,12 +1,12 @@
-export interface People {
+export interface Persona {
 
     id?:number, //Cuando creamos podria no venir
-    name:string,
-    second_name:string,
-    position:string,
-    location:string,
-    networks:string[][],
-    about:string,
+    nombre:string,
+    apellido:string,
+    posicion:string,
+    localidad:string,
+    redes:string[][],
+    acerca:string,
     experiencias:Experiencia[],
     educacion:Educacion[],
 }
@@ -31,15 +31,15 @@ export interface Educacion{
     mensiones:string,
 }
 
-export const PEOPLE: People ={
+export const PERSONA: Persona ={
 
     id:0, //Cuando creamos podria no venir
-    name:"string",
-    second_name:"string",
-    position:"string",
-    location:"string",
-    networks:[["string","string"],["string","string"]],
-    about:'string',
+    nombre:"string",
+    apellido:"string",
+    posicion:"string",
+    localidad:"string",
+    redes:[["string","string"],["string","string"]],
+    acerca:'string',
     experiencias:[],
     educacion:[],
 }

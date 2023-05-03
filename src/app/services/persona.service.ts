@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable, of} from 'rxjs';
 
-import { People, Experiencia } from 'src/People';
+import { Persona, Experiencia } from 'src/People';
 
 const httpOptions = {
   headers : new HttpHeaders({
@@ -22,17 +22,12 @@ export class PersonaService {
     private http:HttpClient
   ) { }
 
-  getPeoples():Observable<People[]>{
-    return this.http.get<People[]>(this.apiUrl);
+  getPeoples():Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.apiUrl);
   }
 
-  deleteAbout(people:People):Observable<People>{
-    const url =  `${this.apiUrl}/${people.id}`;
-    return this.http.put<People>(url,people,httpOptions);
-  }
-
-  update(people: People):Observable<People>{
-    const url = `${this.apiUrl}/${people.id}`;
-    return this.http.put<People>(url,people,httpOptions);
+  update(persona: Persona):Observable<Persona>{
+    const url = `${this.apiUrl}/${persona.id}`;
+    return this.http.put<Persona>(url,persona,httpOptions);
   }
 }
