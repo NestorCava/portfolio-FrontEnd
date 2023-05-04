@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { PERSONA, Persona } from 'src/People';
+import { PERSONA, Persona, Proyecto } from 'src/People';
 
 @Component({
   selector: 'app-projects',
@@ -10,4 +10,15 @@ import { PERSONA, Persona } from 'src/People';
 export class ProjectsComponent {
 
   @Input() persona: Persona = PERSONA;
+  @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
+
+  constructor(){}
+
+  ngOnInit(): void {}
+
+  deleteProyecto(proyecto: Proyecto){
+
+    this.persona.proyectos = this.persona.proyectos.filter(p => p.id !== proyecto.id)
+    this.updatePersona.emit(this.persona);
+  }
 }
