@@ -25,6 +25,7 @@ import { SkillItemComponent } from './components/skill-item/skill-item.component
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProyectoItemComponent } from './components/proyecto-item/proyecto-item.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     IconEditComponent,
     IconDeleteComponent,
     PersonaComponent,
-    SkillItemComponent
+    SkillItemComponent,
+    ProyectoItemComponent
   ],
   imports: [
     BrowserModule,

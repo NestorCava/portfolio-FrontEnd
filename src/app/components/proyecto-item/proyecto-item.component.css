@@ -1,0 +1,11 @@
+div.proyecto-item{
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+}
+
+.iconos-edicion{
+    display: flex;
+    justify-content: flex-end;
+}
+

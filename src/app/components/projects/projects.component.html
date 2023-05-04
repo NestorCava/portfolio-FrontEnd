@@ -2,6 +2,12 @@
     <div class="titulo">
         <h1 class="card-title titulos">Proyectos</h1>
         <app-icon-edit class="icon-edit"></app-icon-edit>
+        
     </div>
+
+    <app-proyecto-item
+        *ngFor="let proyecto of persona.proyectos"
+        [proyecto]="proyecto"
+    ></app-proyecto-item>
 
 </div>

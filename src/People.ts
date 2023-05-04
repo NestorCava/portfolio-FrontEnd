@@ -10,6 +10,7 @@ export interface Persona {
     experiencias:Experiencia[],
     educacion:Educacion[],
     skills:Skill[],
+    proyectos:Proyecto[],
 }
 
 export interface Experiencia {
@@ -39,6 +40,12 @@ export interface Skill{
     porcentaje:number
 }
 
+export interface Proyecto{
+    id: number,
+    titulo:string,
+    descripcion:string
+}
+
 export const PERSONA: Persona ={
 
     id:0, //Cuando creamos podria no venir
@@ -51,4 +58,5 @@ export const PERSONA: Persona ={
     experiencias:[],
     educacion:[],
     skills:[],
+    proyectos:[],
 }
