@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
 
   personas: Persona[] = [];
   id_persona = 0;
+  loggin: boolean = true;
 
   constructor(
     private personaService: PersonaService

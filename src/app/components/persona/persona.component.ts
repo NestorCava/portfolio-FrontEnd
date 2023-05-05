@@ -10,6 +10,7 @@ import { PERSONA, Persona, Experiencia } from 'src/People';
 })
 export class PersonaComponent implements OnInit{
 
+  @Input() loggin:boolean = false;
   @Input() persona: Persona = PERSONA;
   @Input() experiencia: Experiencia = PERSONA.experiencias[0];
 

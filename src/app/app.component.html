@@ -1,4 +1,6 @@
 <app-persona 
     [persona]="personas[id_persona]"
-    (updatePersona)="update(personas[id_persona])"
+    [loggin] = "loggin"
+    contenteditable="true"
+    (updatePersona)="update(personas[id_persona])"  
 ></app-persona>

@@ -9,6 +9,7 @@ import { PERSONA, Persona } from '../../../People';
 })
 export class PortfolioHeaderComponent implements OnInit{
 
+  @Input() loggin:boolean = false;
   @Input() persona: Persona = PERSONA;
 
   @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
@@ -19,6 +20,11 @@ export class PortfolioHeaderComponent implements OnInit{
   ngOnInit(): void {}
 
   deleteAbout(persona: Persona){
+    this.updatePersona.emit(this.persona);
+  }
+
+  editPersona(persona: Persona){
+    this.persona=persona;
     this.updatePersona.emit(this.persona);
   }
 }

@@ -1,8 +1,13 @@
 <div>
     <div class="titulo">
         <h1 class="card-title titulos">Acerca de</h1>
+        
+
         <div class="iconos-edicion">
-            <app-icon-edit class="icon-edit"></app-icon-edit>
+            <app-icon-edit 
+                class="icon-edit"
+                (click)="onEdit('about-paragraph')"
+            ></app-icon-edit>
             <app-icon-delete
                 (click)="onDelete(persona)"
             >
@@ -11,5 +16,10 @@
         
     </div>
     
-    <p class="card-text" id="about-paragraph">{{persona.acerca}}</p>
+    <p 
+        class="card-text" 
+        id="about-paragraph"
+        >{{persona.acerca}}
+    </p>
+
 </div>
