@@ -4,8 +4,8 @@
       "id": 1,
       "nombre": "Nestor D.",
       "apellido": "Cavallini",
-      "posicion": "Desarrollador Full Stack",
-      "localidad": "Entre Rios, Argentina",
+      "posicion": "    Desarrollador Full Stack  ",
+      "localidad": "    Entre Rios, Argentina    ",
       "redes": [
         [
           "../../../assets/icons/github-logo-24.png",

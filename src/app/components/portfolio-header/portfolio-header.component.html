@@ -1,4 +1,6 @@
-<div class="card container-seccion">
+<div 
+    class="card container-seccion"
+    >
 
     <img 
         class="card-img-top"
@@ -7,39 +9,78 @@
         alt="Banner Cavallini Nestor"
     >
 
-    
-
-    <div class="card-columns" id="info-header">
+    <div 
+        class="card-columns" 
+        id="info-header"
+        >
         
-        <div class="col-5" id="encabezado">
-            
-            <div class="card-img" id="contenedor-foto">
+        <div 
+            class="col-5" 
+            id="encabezado"
+            >
+          
+            <div 
+                class="card-img" 
+                id="contenedor-foto"
+                >
         
                 <img 
                     src="../../../assets/img/perfil.jpg" 
                     id="profile-picture"    
                     alt="Cavallini Néstor D Foto de Perfil "
-                >
+                    >
+               
+                    <app-icon-edit 
+                        id="edit-photo"
+                    ></app-icon-edit>
                 
-                <app-icon-edit id="edit-photo"></app-icon-edit>
                 
-                
-            </div>
+                    </div>
 
-            <div id="datos-personales"><ul class="list-unstyled" id="list-personal-info">
-                <li><h1>{{persona.nombre + ' '+ persona.apellido}}</h1></li>
-                <li><h4 class="card-subtitle">{{persona.posicion}}</h4></li>
-                <li><h4 class="card-subtitle">{{persona.localidad}}</h4></li>
-                <li><app-icon-network
-                    *ngFor="let icono of persona.redes"
-                    [icon]="icono[0]"
-                    [url]="icono[1]"
-                    padding="15px"
-                    [texto]="icono[1]"
+            <div 
+                id="datos-personales"
                 >
-                </app-icon-network></li>    
-            </ul>
-            <app-icon-edit></app-icon-edit></div>
+                <ul 
+                    class="list-unstyled" 
+                    id="list-personal-info"
+                    >
+                    <li>
+                        <h1>
+                            <span id="nombre-portfolio-header{{persona.id}}">{{persona.nombre}} </span>
+                            <span id="apellido-portfolio-header{{persona.id}}">{{persona.apellido}}</span> 
+                        </h1>
+                    </li>
+                    <li>
+                        <h4 
+                            class="card-subtitle"
+                            id="posicion-portfolio-header{{persona.id}}"
+                            >
+                            {{persona.posicion}}
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 
+                            class="card-subtitle"
+                            id="localidad-portfolio-header{{persona.id}}"
+                            >
+                            {{persona.localidad}}
+                        </h4>
+                    </li>
+                    <li>
+                        <app-icon-network
+                            *ngFor="let icono of persona.redes"
+                            [icon]="icono[0]"
+                            [url]="icono[1]"
+                            padding="15px"
+                            [texto]="icono[1]"
+                        ></app-icon-network>
+                    </li>    
+                </ul>
+
+                <app-icon-edit
+                    (click)="onEditDatos(persona)">
+                </app-icon-edit>
+            </div>
             
         </div>
         
@@ -48,9 +89,7 @@
                 [persona]="persona"
                 (onDeleteAbout)="deleteAbout(persona)"
                 (onEditPersona)="editPersona(persona)"
-            >
-                
-            </app-about>
+            ></app-about>
         </div>
         
     </div>
