@@ -26,4 +26,18 @@ export class ExperienceEducationComponent implements OnInit{
     this.persona.educacion = this.persona.educacion.filter(e => e.id !== educacion.id)
     this.updatePersona.emit(this.persona);
   }
+
+  editExperiencia(experiencia: Experiencia){
+
+    let posicion = this.persona.experiencias.indexOf(experiencia);
+    this.persona.experiencias[posicion]=experiencia;
+    this.updatePersona.emit(this.persona);
+   }
+
+  editEducacion(educacion: Educacion){
+
+   let posicion = this.persona.educacion.indexOf(educacion);
+   this.persona.educacion[posicion]=educacion;
+   this.updatePersona.emit(this.persona);
+  }
 }

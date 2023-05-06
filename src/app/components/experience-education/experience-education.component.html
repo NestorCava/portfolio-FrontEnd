@@ -1,6 +1,6 @@
 <div class="card container-seccion">
     <div class="titulo">
-        <h1 class="card-title titulos">Experiencia</h1>
+        <h1 class="card-title titulos" contenteditable="false">Experiencia</h1>
     </div>
     
     <div class="container-item">
@@ -8,14 +8,16 @@
         *ngFor="let experiencia of persona.experiencias"
         [experiencia]= "experiencia"
         (onDeleteExperiencia)="deleteExperiencia(experiencia)"
+        (onEditExperiencia)="editExperiencia(experiencia)"
         ></app-experience-item>
     </div>
-    <h1 class="card-title titulos">Educación</h1>
+    <h1 class="card-title titulos" contenteditable="false">Educación</h1>
     <div class="container-item">
         <app-education-item
         *ngFor="let e of persona.educacion"
         [educacion]= "e"
         (onDeleteEducacion)="deleteEducacion(e)"
+        (onEditEducacion)="editEducacion(e)"
         >
         </app-education-item>
     </div>

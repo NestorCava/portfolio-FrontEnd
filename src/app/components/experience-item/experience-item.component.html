@@ -1,21 +1,73 @@
 <div id="icono-edicion-item-experiencia" style="max-width: 720px;">
   <div class="iconos-edicion">
-    <app-icon-edit class="icon-edit"></app-icon-edit>
+
+    <app-icon-edit 
+      class="icon-edit"
+      (click)="onEdit(experiencia)"
+    ></app-icon-edit>
+
     <app-icon-delete
       (click)="onDelete(experiencia)"
     ></app-icon-delete>
+
   </div>
 </div>
+
 <div class="card mb-3" style="max-width: 720px;">
-    <div class="row g-0">
-      <div class="col-md-4" id="div-logo-experience">
-        <img id="image-logo-experience" src={{experiencia.icono}} class="img-fluid rounded-3" alt={{experiencia.icono}}>
+
+    <div 
+      class="row g-0"
+    >
+      <div 
+        class="col-md-4" 
+        id="div-logo-experience"
+      >
+        <img 
+          id="image-logo-experience" 
+          src={{experiencia.icono}} 
+          class="img-fluid rounded-3" 
+          alt={{experiencia.icono}}
+        >
+
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h3 class="card-title" style="font-weight: bold;">{{experiencia.empresa + " - " + experiencia.cargo}}</h3>
-          <h5 class="card-title">{{experiencia.fecha_inicio + " - " + experiencia.fecha_fin}}</h5>
-          <p class="card-text"><small class="text-muted">{{experiencia.descripcion}}</small></p>
+      
+      <div 
+        class="col-md-8"
+      >
+        <div 
+          class="card-body"
+        >
+          <h3 
+            class="card-title" 
+            style="font-weight: bold;"
+          >
+            
+            <span id="empresa-experiencia{{experiencia.id}}" >{{experiencia.empresa}}</span>
+            <span> - </span>
+            <span id="cargo-experiencia{{experiencia.id}}">{{experiencia.cargo}}</span>
+            
+          </h3>
+          
+          <h5 
+            class="card-title"
+          >
+            
+            <span id="fecha-inicio-experiencia{{experiencia.id}}">{{experiencia.fecha_inicio}}</span>
+            <span> - </span>
+            <span id="fecha-fin-experiencia{{experiencia.id}}">{{experiencia.fecha_fin}}</span>
+          
+          </h5>
+
+          <p 
+            class="card-text"
+          >
+            <small 
+              class="text-muted"
+              id="descripcion-experiencia{{experiencia.id}}"
+            >
+              {{experiencia.descripcion}}
+            </small>
+          </p>
         </div>
       </div>
     </div>

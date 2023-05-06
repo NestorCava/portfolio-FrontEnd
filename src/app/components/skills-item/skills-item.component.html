@@ -3,7 +3,6 @@
     <circle-progress
         [percent]="skill.porcentaje"
         [subtitle]="skill.skill"
-        
         [showTitle]="true"
         [radius]="75"
         [outerStrokeWidth]="6"
@@ -13,15 +12,16 @@
         [responsive]="true"
         [animation]="true"
         [animationDuration]="300"
-    ></circle-progress>    
+    ></circle-progress>   
+
     <div class="iconos-edicion">
         <app-icon-edit 
             class="icon-edit"
         ></app-icon-edit>
         <app-icon-delete
-        (click)="onDelete(skill)"  
+            (click)="onDelete(skill)"  
         ></app-icon-delete>
-      </div>
+    </div>
 </div>
 
 
