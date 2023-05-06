@@ -21,5 +21,12 @@ export class SkillsComponent {
     this.persona.skills = this.persona.skills.filter(sk => sk.id !== skill.id)
     this.updatePersona.emit(this.persona);
   }
+
+  editSkill(skill: Skill){
+
+    let posicion = this.persona.skills.indexOf(skill);
+    this.persona.skills[posicion]=skill;
+    this.updatePersona.emit(this.persona);
+   }
   
 }

@@ -1,15 +1,36 @@
-<div class="proyecto-item">
-    <div class="iconos-edicion">
-        <app-icon-edit class="icon-edit"></app-icon-edit>
+<div 
+    class="proyecto-item"
+    >
+    
+    <div 
+        class="iconos-edicion"
+        >
+        <app-icon-edit 
+            class="icon-edit"
+            (click)="onEdit(proyecto)"
+        ></app-icon-edit>
         <app-icon-delete
             (click)="onDelete(proyecto)" 
         ></app-icon-delete>
     </div>
     
-    <div class="card">
+    <div 
+        class="card"
+        >
         <div class="card-body">
-            <h3 class="card-title" style="font-weight: bold;">{{proyecto.titulo}}</h3>
-            <h5 class="card-title">{{proyecto.descripcion}}</h5>
+            <h3 
+                class="card-title" 
+                id="titulo-proyecto{{proyecto.id}}"
+                style="font-weight: bold;"
+                >
+                    {{proyecto.titulo}}
+            </h3>
+            <h5 
+                class="card-title"
+                id="descripcion-proyecto{{proyecto.id}}"
+                >
+                    {{proyecto.descripcion}}
+            </h5>
         </div>
     </div>
     

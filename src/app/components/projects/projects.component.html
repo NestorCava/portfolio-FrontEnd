@@ -1,7 +1,19 @@
-<div class="card container-seccion">
-    <div class="titulo">
-        <h1 class="card-title titulos">Proyectos</h1>
-        <app-icon-edit class="icon-edit"></app-icon-edit>
+<div 
+    class="card container-seccion"
+    >
+    <div 
+        class="titulo"
+        >
+            <h1 
+                class="card-title titulos" 
+                contenteditable="false"
+                >
+                    Proyectos
+            </h1>
+        
+            <app-icon-edit 
+                class="icon-edit"
+            ></app-icon-edit>
         
     </div>
 
@@ -9,6 +21,7 @@
         *ngFor="let proyecto of persona.proyectos"
         [proyecto]="proyecto"
         (onDeleteProyecto)="deleteProyecto(proyecto)"
+        (onEditProyecto)="editProyecto(proyecto)"
     ></app-proyecto-item>
 
 </div>

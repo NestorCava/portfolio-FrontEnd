@@ -21,4 +21,11 @@ export class ProjectsComponent {
     this.persona.proyectos = this.persona.proyectos.filter(p => p.id !== proyecto.id)
     this.updatePersona.emit(this.persona);
   }
+
+  editProyecto(proyecto: Proyecto){
+
+    let posicion = this.persona.proyectos.indexOf(proyecto);
+    this.persona.proyectos[posicion]=proyecto;
+    this.updatePersona.emit(this.persona);
+   }
 }

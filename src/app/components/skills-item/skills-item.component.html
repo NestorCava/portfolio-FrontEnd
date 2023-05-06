@@ -1,9 +1,14 @@
-<div class="skill-item">
+<div 
+    class="skill-item"
+    >
     
     <circle-progress
+        id="skill{{skill.id}}"
         [percent]="skill.porcentaje"
         [subtitle]="skill.skill"
-        [showTitle]="true"
+        [showTitle]="false"
+        [showSubtitle]="false"
+        [showUnits]="false"
         [radius]="75"
         [outerStrokeWidth]="6"
         [innerStrokeWidth]="4"
@@ -13,10 +18,19 @@
         [animation]="true"
         [animationDuration]="300"
     ></circle-progress>   
+    <div class="valores">
 
+        <h3 id="skill-skill{{skill.id}}">{{skill.skill}}</h3>
+        <h5>
+            <span id="porcentaje-skill{{skill.id}}">{{skill.porcentaje}}</span>
+            <span contenteditable="false">%</span>
+        </h5>
+        
+    </div>
     <div class="iconos-edicion">
         <app-icon-edit 
             class="icon-edit"
+            (click)="onEdit(skill)"
         ></app-icon-edit>
         <app-icon-delete
             (click)="onDelete(skill)"  

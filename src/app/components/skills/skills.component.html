@@ -25,6 +25,7 @@
             *ngFor="let skill of persona.skills"
             [skill]="skill"
             (onDeleteSkill)="deleteSkill(skill)"
+            (onEditSkill)="editSkill(skill)"
         ></app-skills-item>
     </div>
   
