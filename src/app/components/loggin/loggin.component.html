@@ -1,0 +1,79 @@
+<!-- <form 
+    class="add-form" 
+    >
+    <div class="form-control">
+        <label for="usuario">Usuario</label>
+        <input 
+            type="text" 
+            name="usuario" 
+            id="usuario" 
+            placeholder="Usuario"
+            [(ngModel)]="usuario"    
+        >
+    
+        <label for="pass">Contraseña</label>
+        <input 
+            type="password" 
+            name="pass" 
+            id="pass" 
+            placeholder="Contraseña"
+            [(ngModel)]="pass" 
+        >
+
+        <input type="submit" value="Ingresar" class="btn btn-block">
+        <input type="cancel" value="Cancelar" class="btn btn-block">
+    </div>    
+</form> -->
+
+<form
+class="card add-form">
+    <div class="form-group">
+        <label 
+            for="usuarioInput"
+            >
+            Usuario
+        </label>
+      
+        <input 
+            type="text" 
+            class="form-control" 
+            id="usuarioInput" 
+            aria-describedby="usuarioHelp" 
+            placeholder="Usuario"
+        >
+    </div>
+    <div 
+        class="form-group"
+        >
+        <label 
+            for="contraseniaInput"
+            >
+            Contraseña
+        </label>
+        <input 
+            type="password" 
+            class="form-control" 
+            id="contraseniaInput" 
+            placeholder="Contraseña"
+        >
+    </div>
+
+    <div 
+        class="botones-loggin"
+        >
+        <button 
+            type="submit" 
+            class="btn btn-primary"
+            >
+            Ingresar
+        </button>
+        <button 
+            type="cancel" 
+            class="btn btn-primary"
+            >
+            Cancelar
+        </button>
+
+    </div>
+    
+  </form>
