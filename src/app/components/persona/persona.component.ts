@@ -10,8 +10,10 @@ import { PERSONA, Persona, Experiencia } from 'src/People';
 })
 export class PersonaComponent implements OnInit{
 
+  
+  persona: Persona = PERSONA;
   @Input() loggin:boolean = false;
-  @Input() persona: Persona = PERSONA;
+  //@Input() persona: Persona = PERSONA;
   @Input() experiencia: Experiencia = PERSONA.experiencias[0];
 
   @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
@@ -21,6 +23,8 @@ export class PersonaComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    this.personaService.getPeople(1).subscribe((persona) => {this.persona = persona});
+    console.log(this.persona);
   }
 
   update(persona: Persona){

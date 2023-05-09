@@ -1,3 +1,11 @@
-<div [ngStyle]="{'padding-left': padding}">
-    <a [href]=url target="_blank"><img [src]=icon alt=""></a>
+
+<div 
+    [ngStyle]="{'padding-left': padding}"
+    
+    >
+    <fa-icon
+        [icon]='loggin ? usuarioLogin:usuarioLogout'
+        (click)="toogleLog()"
+    ></fa-icon>
 </div>
+

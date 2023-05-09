@@ -2,20 +2,16 @@
     <h1 class="card-title">{{persona.nombre + ' '+ persona.apellido}}</h1>
 
     <div class="icons">
-        <app-icon-network
+     <!--    <app-icon-network
             *ngFor="let icono of persona.redes"
             [icon]="icono[0]"
             [url]="icono[1]"
             padding="15px"
         >
-        </app-icon-network>
+        </app-icon-network> -->
 
         <app-icon-user
-            icon="../../../assets/icons/user-rectangle-solid-24.png"
-            url=""
-            padding="15px"
-        >
-            
-        </app-icon-user>
+            class="icon-header"
+        ></app-icon-user>
     </div>
 </header>

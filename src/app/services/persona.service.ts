@@ -26,6 +26,11 @@ export class PersonaService {
     return this.http.get<Persona[]>(this.apiUrl);
   }
 
+  getPeople(id_persona:number):Observable<Persona>{
+    const url = `${this.apiUrl}/${id_persona}`;
+    return this.http.get<Persona>(url);
+  }
+
   update(persona: Persona):Observable<Persona>{
     const url = `${this.apiUrl}/${persona.id}`;
     return this.http.put<Persona>(url,persona,httpOptions);

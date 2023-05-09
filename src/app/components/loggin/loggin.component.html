@@ -26,7 +26,7 @@
 </form> -->
 
 <form
-class="card add-form">
+class="card add-form" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label 
             for="usuarioInput"
@@ -70,6 +70,7 @@ class="card add-form">
         <button 
             type="cancel" 
             class="btn btn-primary"
+            routerLink="/"
             >
             Cancelar
         </button>
