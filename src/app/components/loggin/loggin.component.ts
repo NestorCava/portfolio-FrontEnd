@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
+import { LoginService } from 'src/app/services/login.service';
 import { Subscription } from 'rxjs';
 import { Router, RouterLink } from '@angular/router'
+import { Usuario } from 'src/Usuario';
 
 @Component({
   selector: 'app-loggin',
@@ -9,30 +11,24 @@ import { Router, RouterLink } from '@angular/router'
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent {
-  usuario: string ="";
-  pass: string ="";
+  usuario: Usuario[]= [];
 
   loggin: boolean=false;
   subscription?: Subscription;
 
   constructor(
     private uiService:UiService,
+    private loginService:LoginService,
     private router:Router
   ){
     this.subscription = this.uiService.onToogle()
                                       .subscribe(value => this.loggin = value)
   }
 
+  ngInit():void{
+  }
   onSubmit(){
-    //console.log("this.loggin");
-    //this.uiService.setLoggin(true);
     this.uiService.toogleLog();
-    console.log(this.loggin);
-    console.log(this.loggin);
-    console.log(this.loggin);
-    console.log(this.loggin);
-    console.log(this.loggin);
-    console.log(this.loggin);
     this.router.navigate(['/']);
   }
 

@@ -107,5 +107,13 @@
         }
       ]
     }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "admin",
+      "contrasenia": "admin",
+      "id_usuario": 1
+    }
   ]
 }
