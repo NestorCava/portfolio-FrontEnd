@@ -27,7 +27,9 @@
         </h5>
         
     </div>
-    <div class="iconos-edicion">
+    <div 
+        class="iconos-edicion"
+        *ngIf="loggin">
         <app-icon-edit 
             class="icon-edit"
             (click)="onEdit(skill)"

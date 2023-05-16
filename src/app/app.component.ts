@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
-    this.personaService.getPeoples().subscribe((personas) => {this.personas = personas});
+    //this.personaService.getPeoples().subscribe((personas) => {this.personas = personas});
   }
 
   update(persona: Persona){

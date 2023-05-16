@@ -3,7 +3,10 @@
         <h1 class="card-title titulos" contenteditable="false">Acerca de</h1>
         
 
-        <div class="iconos-edicion">
+        <div 
+            class="iconos-edicion"
+            *ngIf="loggin"
+            >
             <app-icon-edit 
                 class="icon-edit"
                 (click)="onEdit('about-paragraph')"

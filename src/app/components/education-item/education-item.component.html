@@ -2,6 +2,7 @@
   
   <div 
     class="iconos-edicion"
+    *ngIf="loggin"
   >
     <app-icon-edit 
       class="icon-edit"
@@ -27,12 +28,6 @@
         <div 
           class="col-md-4" 
           id="div-logo-education"
-          >
-          <img 
-            id="image-logo-education" 
-            src={{educacion.icono}} 
-            class="img-fluid rounded-3" 
-            alt={{educacion.icono}}
           >
         </div>
       

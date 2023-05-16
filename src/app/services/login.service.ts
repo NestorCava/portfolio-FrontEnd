@@ -16,14 +16,24 @@ const httpOptions = {
 })
 export class LoginService {
 
-  private apiUrl = 'http://localhost:5000/usuarios';
+  //private apiUrl = 'http://localhost:5000/usuarios';
+  private apiUrl = 'http://localhost:8080/login';
   usuarioLog: Usuario = USUARIO;
 
   constructor(
     private http:HttpClient
   ) { }
 
-  getUsuarios():Observable<Usuario[]>{
+  /* getUsuarios():Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.apiUrl);
+  } */
+
+  evaluarLogin():Observable<boolean>{
+    const url = this.apiUrl + "?usuario=admin&password=admin";
+    console.log("ACA");
+    console.log("ACA");
+    console.log("ACA");
+    return this.http.get<boolean>(url);
+
   }
 }

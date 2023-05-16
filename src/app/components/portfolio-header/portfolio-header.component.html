@@ -32,6 +32,7 @@
                
                     <app-icon-edit 
                         id="edit-photo"
+                        *ngIf="loggin"
                     ></app-icon-edit>
                 
                 
@@ -78,7 +79,8 @@
                 </ul>
 
                 <app-icon-edit
-                    (click)="onEditDatos(persona)">
+                    (click)="onEditDatos(persona)"
+                    *ngIf="loggin">
                 </app-icon-edit>
             </div>
             

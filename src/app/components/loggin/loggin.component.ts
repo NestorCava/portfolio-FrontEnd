@@ -3,7 +3,7 @@ import { UiService } from 'src/app/services/ui.service';
 import { LoginService } from 'src/app/services/login.service';
 import { Subscription } from 'rxjs';
 import { Router, RouterLink } from '@angular/router'
-import { Usuario } from 'src/Usuario';
+import { USUARIO, Usuario } from 'src/Usuario';
 
 @Component({
   selector: 'app-loggin',
@@ -11,8 +11,9 @@ import { Usuario } from 'src/Usuario';
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent {
-  usuario: Usuario[]= [];
+  usuario: Usuario = USUARIO;
 
+  logo : boolean=false;
   loggin: boolean=false;
   subscription?: Subscription;
 
@@ -26,8 +27,18 @@ export class LogginComponent {
   }
 
   ngInit():void{
+    this.loginService.evaluarLogin().subscribe((logo) => {this.logo = logo});
   }
   onSubmit(){
+    //let usuario = document.getElementById("usuarioInput")?.textContent as string;
+    //let password = document.getElementById("contraseniaInput")?.textContent as string;
+    let retorno = false;
+    this.loginService.evaluarLogin().subscribe((logo) => {this.logo = logo});
+    console.log("OOOOOO");
+    console.log("OOOOOO");
+    console.log("OOOOOO");
+    console.log(this.logo);
+
     this.uiService.toogleLog();
     this.router.navigate(['/']);
   }

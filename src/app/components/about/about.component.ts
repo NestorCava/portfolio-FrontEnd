@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 import { PERSONA, Persona } from 'src/People';
 
@@ -9,12 +11,18 @@ import { PERSONA, Persona } from 'src/People';
 })
 export class AboutComponent implements OnInit{
 
-  loggin:boolean = true;
+  loggin: boolean=false;
+  subscription?: Subscription;
+
   @Input() persona: Persona = PERSONA;
   @Output() onDeleteAbout: EventEmitter<Persona> = new EventEmitter();
   @Output() onEditPersona: EventEmitter<Persona> = new EventEmitter();
 
-  constructor(){}
+  constructor(private uiService:UiService){
+    this.subscription = this.uiService.onToogle()
+                                      .subscribe(value => this.loggin = value);
+                                      this.loggin = this.uiService.getLoggin();
+  }
 
   ngOnInit(): void {}
 

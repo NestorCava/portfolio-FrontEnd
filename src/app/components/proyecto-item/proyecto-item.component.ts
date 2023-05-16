@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 import { PERSONA, Proyecto } from 'src/People';
 
@@ -9,11 +11,18 @@ import { PERSONA, Proyecto } from 'src/People';
 })
 export class ProyectoItemComponent {
 
+  loggin: boolean=false;
+  subscription?: Subscription;
+
   @Input() proyecto: Proyecto = PERSONA.proyectos[0];
   @Output() onDeleteProyecto: EventEmitter<Proyecto> = new EventEmitter();
   @Output() onEditProyecto: EventEmitter<Proyecto> = new EventEmitter();
 
-  constructor(){}
+  constructor(private uiService:UiService){
+    this.subscription = this.uiService.onToogle()
+                                      .subscribe(value => this.loggin = value);
+                                      this.loggin = this.uiService.getLoggin();
+  }
 
   onDelete(proyecto: Proyecto){
     this.onDeleteProyecto.emit(proyecto);

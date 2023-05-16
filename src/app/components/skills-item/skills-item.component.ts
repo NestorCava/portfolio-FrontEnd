@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 import { PERSONA, Skill } from 'src/People';
 @Component({
@@ -7,12 +9,18 @@ import { PERSONA, Skill } from 'src/People';
   styleUrls: ['./skills-item.component.css']
 })
 export class SkillsItemComponent {
-
+  loggin: boolean=false;
+  subscription?: Subscription;
   @Input() skill:Skill = PERSONA.skills[0];
   @Output() onDeleteSkill: EventEmitter<Skill> = new EventEmitter();
   @Output() onEditSkill: EventEmitter<Skill> = new EventEmitter();
 
-  constructor(){}
+  constructor(private uiService:UiService){
+    this.subscription = this.uiService.onToogle()
+                                      .subscribe(value => this.loggin = value);
+                                      this.loggin = this.uiService.getLoggin();
+  }
+
 
   onDelete(skill: Skill){
     this.onDeleteSkill.emit(skill);

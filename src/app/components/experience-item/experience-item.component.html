@@ -1,5 +1,7 @@
 <div id="icono-edicion-item-experiencia" style="max-width: 720px;">
-  <div class="iconos-edicion">
+  <div 
+    class="iconos-edicion"
+    *ngIf="loggin">
 
     <app-icon-edit 
       class="icon-edit"
@@ -22,12 +24,7 @@
         class="col-md-4" 
         id="div-logo-experience"
       >
-        <img 
-          id="image-logo-experience" 
-          src={{experiencia.icono}} 
-          class="img-fluid rounded-3" 
-          alt={{experiencia.icono}}
-        >
+       
 
       </div>
       
