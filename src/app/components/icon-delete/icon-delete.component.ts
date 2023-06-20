@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-icon-delete',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./icon-delete.component.css']
 })
 export class IconDeleteComponent {
-  
+  icono = faXmark;
 
 }
