@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { PERSONA, Persona } from 'src/People';
 
@@ -14,6 +15,8 @@ export class AboutComponent implements OnInit{
   loggin: boolean=false;
   subscription?: Subscription;
 
+  aboutForm: FormGroup;
+
   @Input() persona: Persona = PERSONA;
   @Output() onDeleteAbout: EventEmitter<Persona> = new EventEmitter();
   @Output() onEditPersona: EventEmitter<Persona> = new EventEmitter();
@@ -22,9 +25,13 @@ export class AboutComponent implements OnInit{
     this.subscription = this.uiService.onToogle()
                                       .subscribe(value => this.loggin = value);
                                       this.loggin = this.uiService.getLoggin();
+  
+    this.aboutForm = new FormGroup({textoAcerca: new FormControl("")});
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //this.aboutForm.setValue({'textoAcerca':this.persona.acerca});
+  }
 
   onDelete(persona: Persona){
     persona.acerca="";

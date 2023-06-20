@@ -2,7 +2,6 @@
     <div class="titulo">
         <h1 class="card-title titulos" contenteditable="false">Acerca de</h1>
         
-
         <div 
             class="iconos-edicion"
             *ngIf="loggin"
@@ -22,7 +21,28 @@
     <p 
         class="card-text" 
         id="about-paragraph"
+        *ngIf="!loggin"
         >{{persona.acerca}}
     </p>
+
+    <form 
+        class="card add-form" 
+        [formGroup]="aboutForm"
+        *ngIf="loggin"
+        >
+
+            <textarea 
+                class="card-text form-control" 
+                formControlName="textoAcerca"
+                name="" 
+                id="texto-acerca" 
+                style="min-width: 100%" 
+                rows="3" 
+                [(ngModel)]="persona.acerca"
+                >   
+            </textarea>
+    
+    </form>
+    
 
 </div>
