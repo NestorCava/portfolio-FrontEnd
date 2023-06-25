@@ -16,6 +16,10 @@ export class PersonaComponent implements OnInit{
   //@Input() persona: Persona = PERSONA;
   @Input() experiencia: Experiencia = PERSONA.experiencias[0];
 
+  @Output() updateAboutPersona: EventEmitter<Persona> = new EventEmitter();
+
+  
+
   @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
 
   constructor(
@@ -26,7 +30,14 @@ export class PersonaComponent implements OnInit{
     this.personaService.getPeople(1).subscribe((persona) => {this.persona = persona});
   }
 
+  updateAbout(persona: Persona){
+    console.log("persona.id");
+    console.log(persona.id);
+    this.personaService.getPeople(1).subscribe((persona) => {this.persona = persona});
+  }
+
   update(persona: Persona){
-    this.updatePersona.emit(persona);
+    //this.updatePersona.emit(persona);
+    this.personaService.update(persona).subscribe();
   }
 }

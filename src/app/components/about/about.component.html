@@ -8,10 +8,10 @@
             >
             <app-icon-edit 
                 class="icon-edit"
-                (click)="onEdit('about-paragraph')"
+                (click)="onEdit()"
             ></app-icon-edit>
             <app-icon-delete
-                (click)="onDelete(persona)"
+                (click)="onCancelEditionAbout()"
             >
             </app-icon-delete>
         </div>
@@ -21,14 +21,14 @@
     <p 
         class="card-text" 
         id="about-paragraph"
-        *ngIf="!loggin"
+        *ngIf="!edition_mode"
         >{{persona.acerca}}
     </p>
 
     <form 
         class="card add-form" 
         [formGroup]="aboutForm"
-        *ngIf="loggin"
+        *ngIf="edition_mode"
         >
 
             <textarea 

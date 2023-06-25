@@ -89,7 +89,9 @@
         <div class="col-7">
             <app-about 
                 [persona]="persona"
-                (onDeleteAbout)="deleteAbout(persona)"
+                (onUploadAbout) = "uploadAbout(persona)"
+
+                (onDeleteAboutEdition)="deleteAbout(persona)"
                 (onEditPersona)="editPersona(persona)"
             ></app-about>
         </div>

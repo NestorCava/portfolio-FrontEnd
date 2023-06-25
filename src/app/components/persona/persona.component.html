@@ -8,6 +8,7 @@
     <div class="portfolio">
       <app-portfolio-header 
         [persona]="persona"
+        (uploadAboutPersona)="updateAbout(persona)"
         (updatePersona)="update(persona)"
       ></app-portfolio-header>
 

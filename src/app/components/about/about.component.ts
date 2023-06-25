@@ -14,12 +14,17 @@ export class AboutComponent implements OnInit{
 
   loggin: boolean=false;
   subscription?: Subscription;
+  edition_mode: boolean = false;
 
   aboutForm: FormGroup;
 
   @Input() persona: Persona = PERSONA;
-  @Output() onDeleteAbout: EventEmitter<Persona> = new EventEmitter();
+
+  @Output() onUploadAbout: EventEmitter<Persona> = new EventEmitter();
   @Output() onEditPersona: EventEmitter<Persona> = new EventEmitter();
+
+  @Output() onDeleteAbout: EventEmitter<Persona> = new EventEmitter();
+  
 
   constructor(private uiService:UiService){
     this.subscription = this.uiService.onToogle()
@@ -30,17 +35,16 @@ export class AboutComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    //this.aboutForm.setValue({'textoAcerca':this.persona.acerca});
-  }
-
-  onDelete(persona: Persona){
-    persona.acerca="";
-    this.onDeleteAbout.emit(this.persona);
-  }
-
-  onEdit(id_element: string){
     
-    this.persona.acerca=(document.getElementById(id_element))?.textContent as string;
-    this.onEditPersona.emit(this.persona);
+  }
+
+  onCancelEditionAbout(){
+    this.persona.acerca = this.aboutForm.get("textoAcerca")?.value;
+    this.edition_mode = false;
+    
+  }
+
+  onEdit(){
+    this.edition_mode = true;
   }
 }

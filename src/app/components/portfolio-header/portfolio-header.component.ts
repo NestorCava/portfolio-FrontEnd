@@ -15,6 +15,7 @@ export class PortfolioHeaderComponent implements OnInit{
   subscription?: Subscription;
 
   @Input() persona: Persona = PERSONA;
+  @Output() uploadAboutPersona: EventEmitter<Persona> = new EventEmitter();
 
   @Output() updatePersona: EventEmitter<Persona> = new EventEmitter();
  
@@ -27,6 +28,14 @@ export class PortfolioHeaderComponent implements OnInit{
 
   ngOnInit(): void {}
 
+  deleteAboutEdition(){
+    
+  }
+
+  uploadAbout(persona: Persona){
+    this.uploadAboutPersona.emit(this.persona);
+  }
+  
   deleteAbout(persona: Persona){
     this.updatePersona.emit(this.persona);
   }
