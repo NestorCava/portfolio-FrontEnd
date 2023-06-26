@@ -46,17 +46,70 @@
                     id="list-personal-info"
                     >
                     <li>
-                        <h1>
+                        <h1
+                            *ngIf="!edition_mode"
+                            >
                             <span id="nombre-portfolio-header{{persona.id}}">{{persona.nombre}} </span>
                             <span id="apellido-portfolio-header{{persona.id}}">{{persona.apellido}}</span> 
                         </h1>
+
+                        <form 
+                                class="card add-form" 
+                                [formGroup]="datosPersonalesForm"
+                                *ngIf="edition_mode"
+                                >
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text">
+                                                Nombre
+                                        </span>
+                                        <input 
+                                        type="text" class="form-control" 
+                                        formControlName="nombreInput"
+                                        id="nombreInput" 
+                                        placeholder="Nombre"
+                                        [(ngModel)]="persona.nombre"
+                                        >
+                                        <span
+                                            class="input-group-text">
+                                                Apellido
+                                        </span>
+                                        <input 
+                                        type="text" class="form-control" 
+                                        formControlName="apellidoInput"
+                                        id="apellidoInput" 
+                                        placeholder="Apellido"
+                                        [(ngModel)]="persona.apellido"
+                                        >
+                                    </div>
+                            </form>
                     </li>
                     <li>
                         <h4 
                             class="card-subtitle"
                             id="posicion-portfolio-header{{persona.id}}"
                             >
-                            {{persona.posicion}}
+                            <span *ngIf="!edition_mode">{{persona.posicion}}</span>
+                            <form 
+                                class="card add-form" 
+                                [formGroup]="datosPersonalesForm"
+                                *ngIf="edition_mode"
+                                >
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text">
+                                                Posición
+                                        </span>
+                                        <input 
+                                        type="text" class="form-control" 
+                                        formControlName="posicionInput"
+                                        id="posicionInput" 
+                                        placeholder="Posición"
+                                        [(ngModel)]="persona.posicion"
+                                        >
+                                        
+                                    </div>
+                            </form>
                         </h4>
                     </li>
                     <li>
@@ -64,24 +117,73 @@
                             class="card-subtitle"
                             id="localidad-portfolio-header{{persona.id}}"
                             >
-                            {{persona.localidad}}
+                            <span *ngIf="!edition_mode">{{persona.localidad}}</span>
+
+                            <form 
+                                class="card add-form" 
+                                [formGroup]="datosPersonalesForm"
+                                *ngIf="edition_mode"
+                                >
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text">
+                                                Localidad
+                                        </span>
+                                        <input 
+                                        type="text" class="form-control" 
+                                        formControlName="localidadInput"
+                                        id="localidadInput" 
+                                        placeholder="Localidad"
+                                        [(ngModel)]="persona.localidad"
+                                        >
+                                        
+                                    </div>
+                            </form>
                         </h4>
                     </li>
-                    <!-- <li>
-                        <app-icon-network
-                            *ngFor="let icono of persona.redes"
-                            [icon]="icono[0]"
-                            [url]="icono[1]"
-                            padding="15px"
-                            [texto]="icono[1]"
-                        ></app-icon-network>
-                    </li>     -->
+                    <li>
+                        <h4
+                            *ngFor="let red of persona.redesSociales"
+                        >
+                         <span *ngIf="!edition_mode">{{red.url}}</span>
+                         <form 
+                                class="card add-form" 
+                                [formGroup]="datosPersonalesForm"
+                                *ngIf="edition_mode"
+                                >
+                                    <div class="input-group">
+                                        <span
+                                            class="input-group-text">
+                                                Red
+                                        </span>
+                                        <input 
+                                        type="text" class="form-control" 
+                                        formControlName="red{{red.id}}Input"
+                                        id="red{{red.id}}Input" 
+                                        placeholder="Red"
+                                        [(ngModel)]="red.url"
+                                        >
+                                        
+                                    </div>
+                            </form>
+                        </h4>
+                    </li>     
                 </ul>
 
-                <app-icon-edit
-                    (click)="onEditDatos(persona)"
-                    *ngIf="loggin">
-                </app-icon-edit>
+                
+                <div 
+                    class="iconos-edicion"
+                    style="align-items: flex-start;"
+                    *ngIf="loggin"
+                    >
+                        <app-icon-edit 
+                        
+                            (click)="onEdit()"
+                        ></app-icon-edit>
+                        <app-icon-delete
+                            (click)="onCancelEditionAbout()"
+                        ></app-icon-delete>
+                </div>
             </div>
             
         </div>

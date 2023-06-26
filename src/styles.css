@@ -39,6 +39,7 @@ h4{
 }
 
 div.iconos-edicion{
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    padding-left: 10px;
 }
