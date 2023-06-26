@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Educacion, PERSONA } from 'src/People';
 
@@ -12,6 +13,9 @@ import { Educacion, PERSONA } from 'src/People';
 export class EducationItemComponent {
   loggin: boolean=false;
   subscription?: Subscription;
+  edition_mode: boolean = false;
+
+  educacionForm: FormGroup;
 
   @Input() educacion: Educacion = PERSONA.educacion[0];
   @Output() onDeleteEducacion: EventEmitter<Educacion> = new EventEmitter();
@@ -21,14 +25,28 @@ export class EducationItemComponent {
     this.subscription = this.uiService.onToogle()
                                       .subscribe(value => this.loggin = value);
                                       this.loggin = this.uiService.getLoggin();
+
+    this.educacionForm = new FormGroup({
+                                        tituloInput: new FormControl(""),
+                                        institucionInput: new FormControl(""),
+                                        fechaInicioInput: new FormControl(""),
+                                        fechaFinInput: new FormControl(""),
+                                        mensionesInput: new FormControl(""),
+                                      });
   }
 
-  onDelete(educacion: Educacion){
-    this.onDeleteEducacion.emit(educacion);
+  onCancelEdition(){
+    this.educacion.titulo = this.educacionForm.get("tituloInput")?.value;
+    this.educacion.institucion = this.educacionForm.get("institucionInput")?.value;
+    this.educacion.fecha_inicio = this.educacionForm.get("fechaInicioInput")?.value;
+    this.educacion.fecha_fin = this.educacionForm.get("fechaFinInput")?.value;
+    this.educacion.mensiones = this.educacionForm.get("mensionesInput")?.value;
+
+    this.edition_mode = false;
   }
 
-  onEdit(educacion: Educacion){
-    
+  onEdit(){
+    this.edition_mode = true;
     /* educacion.titulo=(document.getElementById("titulo-educacion"+educacion.id))
                           ?.textContent as string;
     educacion.institucion=(document.getElementById("institucion-educacion"+educacion.id))
@@ -40,11 +58,7 @@ export class EducationItemComponent {
     educacion.mensiones=(document.getElementById("mensiones-educacion"+educacion.id))
                         ?.textContent as string;
      */
-    
-    this.educacion = educacion;
-
-    this.onEditEducacion.emit(this.educacion);
-    
+     
   }
 
 }

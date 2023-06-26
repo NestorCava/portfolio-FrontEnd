@@ -6,11 +6,11 @@
   >
     <app-icon-edit 
       class="icon-edit"
-      (click)="onEdit(educacion)"
+      (click)="onEdit()"
     ></app-icon-edit>
     
     <app-icon-delete
-      (click)="onDelete(educacion)"
+      (click)="onCancelEdition()"
     ></app-icon-delete>
   
   </div>
@@ -40,25 +40,102 @@
               id="titulo-educacion{{educacion.id}}" 
               style="font-weight: bold;"
               >
-                {{educacion.titulo}}
+                <span *ngIf="!edition_mode">{{educacion.titulo}}</span>
+
+                <form 
+              class="card add-form" 
+              [formGroup]="educacionForm"
+              *ngIf="edition_mode"
+              >
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Titulo
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="tituloInput"
+                    id="tituloInput" 
+                    placeholder="Empresa"
+                    [(ngModel)]="educacion.titulo"
+                  >
+                </div>
+              </form>
             </h3>
           
             <h5 
               class="card-title" 
               id="institucion-educacion{{educacion.id}}"
               >
-                {{educacion.institucion}}
+                <span *ngIf="!edition_mode">{{educacion.institucion}}</span>
+
+                <form 
+                  class="card add-form" 
+                  [formGroup]="educacionForm"
+                  *ngIf="edition_mode"
+                  >
+                    <div class="input-group">
+                      <span
+                        class="input-group-text">
+                          Institución
+                      </span>
+                      <input 
+                        type="text" class="form-control" 
+                        formControlName="institucionInput"
+                        id="institucionInput" 
+                        placeholder="Institución"
+                        [(ngModel)]="educacion.institucion"
+                      >
+                    </div>
+                  </form>
             </h5>
             
-            <p 
+            <h5>
+              <div 
               class="card-text"
+              *ngIf="!edition_mode"
               >
-              
-              <span id="fecha-inicio-educacion{{educacion.id}}">{{educacion.fecha_inicio}}</span>
-              <span> - </span>
-              <span id="fecha-fin-educacion{{educacion.id}}">{{educacion.fecha_fin}}</span>
-            </p>
-          
+                <span id="fecha-inicio-educacion{{educacion.id}}">{{educacion.fecha_inicio}}</span>
+                <span> - </span>
+                <span id="fecha-fin-educacion{{educacion.id}}">{{educacion.fecha_fin}}</span>
+          </div>
+            
+            
+              <form 
+              class="card add-form" 
+              [formGroup]="educacionForm"
+              *ngIf="edition_mode"
+              >
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Fecha Inicio
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="fechaInicioInput"
+                    id="fechaInicioInput" 
+                    placeholder="Fecha Inicio"
+                    [(ngModel)]="educacion.fecha_inicio"
+                  >
+                </div>
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Fecha Fin
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="fechaFinInput"
+                    id="fechaFinInput" 
+                    placeholder="Fecha Fin"
+                    [(ngModel)]="educacion.fecha_fin"
+                  >
+                </div>
+            </form>
+            </h5>
+            
+            
             <p 
               class="card-text"
               >
@@ -66,7 +143,22 @@
                 class="text-muted" 
                 id="mensiones-educacion{{educacion.id}}"
                 >
-                {{educacion.mensiones}}
+                <span *ngIf="!edition_mode">{{educacion.mensiones}}</span>
+
+                <form 
+            class="card add-form" 
+            [formGroup]="educacionForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">Mensiones</span>
+                <textarea type="text" class="form-control" 
+                formControlName="mensionesInput"
+                id="mensionesInput" 
+                placeholder="Mensiones"
+                [(ngModel)]="educacion.mensiones"></textarea>
+              </div>
+            </form>
               </small>
             </p>
         </div>

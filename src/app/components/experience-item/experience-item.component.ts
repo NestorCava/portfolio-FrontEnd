@@ -37,15 +37,18 @@ export class ExperienceItemComponent {
   }
 
   onCancelEdition(){
-    this.edition_mode = false;
-  }
 
-  onEdit(){
     this.experiencia.empresa = this.experienciaForm.get("empresaInput")?.value;
     this.experiencia.cargo = this.experienciaForm.get("cargoInput")?.value;
     this.experiencia.fecha_inicio = this.experienciaForm.get("fechaInicioInput")?.value;
     this.experiencia.fecha_fin = this.experienciaForm.get("fechaFinInput")?.value;
     this.experiencia.descripcion = this.experienciaForm.get("descripcionInput")?.value;
+    
+    this.edition_mode = false;
+  }
+
+  onEdit(){
+    
 
     this.edition_mode = true;
     
