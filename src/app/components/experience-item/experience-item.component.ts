@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { Experiencia, PERSONA } from 'src/People';
 
@@ -13,6 +14,9 @@ export class ExperienceItemComponent {
 
   loggin: boolean=false;
   subscription?: Subscription;
+  edition_mode: boolean = false;
+
+  experienciaForm: FormGroup;
 
   @Input() experiencia: Experiencia = PERSONA.experiencias[0];
   @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter();
@@ -22,28 +26,28 @@ export class ExperienceItemComponent {
     this.subscription = this.uiService.onToogle()
                                       .subscribe(value => this.loggin = value);
                                       this.loggin = this.uiService.getLoggin();
+
+    this.experienciaForm = new FormGroup({
+                                        empresaInput: new FormControl(""),
+                                        cargoInput: new FormControl(""),
+                                        fechaInicioInput: new FormControl(""),
+                                        fechaFinInput: new FormControl(""),
+                                        descripcionInput: new FormControl("")
+                                      });
   }
 
-  onDelete(experiencia: Experiencia){
-    this.onDeleteExperiencia.emit(experiencia);
+  onCancelEdition(){
+    this.edition_mode = false;
   }
 
-  onEdit(experiencia: Experiencia){
-    
-    /* experiencia.empresa=(document.getElementById("empresa-educacion"+experiencia.id))
-                          ?.textContent as string;
-    experiencia.cargo=(document.getElementById("cargo-educacion"+experiencia.id))
-                          ?.textContent as string;
-    experiencia.fecha_inicio=(document.getElementById("fecha-inicio-educacion"+experiencia.id))
-                          ?.textContent as string;
-    experiencia.fecha_fin=(document.getElementById("fecha-fin-educacion"+experiencia.id))
-                          ?.textContent as string;
-    experiencia.descripcion=(document.getElementById("descripcion-educacion"+experiencia.id))
-                          ?.textContent as string; */
-    
-    this.experiencia = experiencia;
+  onEdit(){
+    this.experiencia.empresa = this.experienciaForm.get("empresaInput")?.value;
+    this.experiencia.cargo = this.experienciaForm.get("cargoInput")?.value;
+    this.experiencia.fecha_inicio = this.experienciaForm.get("fechaInicioInput")?.value;
+    this.experiencia.fecha_fin = this.experienciaForm.get("fechaFinInput")?.value;
+    this.experiencia.descripcion = this.experienciaForm.get("descripcionInput")?.value;
 
-    this.onEditExperiencia.emit(this.experiencia);
+    this.edition_mode = true;
     
   }
 

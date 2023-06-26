@@ -5,11 +5,11 @@
 
     <app-icon-edit 
       class="icon-edit"
-      (click)="onEdit(experiencia)"
+      (click)="onEdit()"
     ></app-icon-edit>
 
     <app-icon-delete
-      (click)="onDelete(experiencia)"
+      (click)="onCancelEdition()"
     ></app-icon-delete>
 
   </div>
@@ -38,21 +38,88 @@
             class="card-title" 
             style="font-weight: bold;"
           >
-            
-            <span id="empresa-experiencia{{experiencia.id}}" >{{experiencia.empresa}}</span>
-            <span> - </span>
-            <span id="cargo-experiencia{{experiencia.id}}">{{experiencia.cargo}}</span>
-            
+            <div *ngIf="!edition_mode">
+              <span id="empresa-experiencia{{experiencia.id}}" >{{experiencia.empresa}}</span>
+              <span> - </span>
+              <span id="cargo-experiencia{{experiencia.id}}">{{experiencia.cargo}}</span>
+            </div>
+
+            <form 
+              class="card add-form" 
+              [formGroup]="experienciaForm"
+              *ngIf="edition_mode"
+              >
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Empresa
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="empresaInput"
+                    id="empresaInput" 
+                    placeholder="Empresa"
+                    [(ngModel)]="experiencia.empresa"
+                  >
+                </div>
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Cargo
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="cargoInput"
+                    id="cargoInput" 
+                    placeholder="Cargo"
+                    [(ngModel)]="experiencia.cargo"
+                  >
+                </div>
+            </form>
           </h3>
           
           <h5 
             class="card-title"
           >
+            <div *ngIf="!edition_mode">
+              <span id="fecha-inicio-experiencia{{experiencia.id}}">{{experiencia.fecha_inicio}}</span>
+              <span> - </span>
+              <span id="fecha-fin-experiencia{{experiencia.id}}">{{experiencia.fecha_fin}}</span>
+            </div>
             
-            <span id="fecha-inicio-experiencia{{experiencia.id}}">{{experiencia.fecha_inicio}}</span>
-            <span> - </span>
-            <span id="fecha-fin-experiencia{{experiencia.id}}">{{experiencia.fecha_fin}}</span>
-          
+
+            <form 
+              class="card add-form" 
+              [formGroup]="experienciaForm"
+              *ngIf="edition_mode"
+              >
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Fecha Inicio
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="fechaInicioInput"
+                    id="fechaInicioInput" 
+                    placeholder="Fecha Inicio"
+                    [(ngModel)]="experiencia.fecha_inicio"
+                  >
+                </div>
+                <div class="input-group">
+                  <span
+                    class="input-group-text">
+                      Fecha Fin
+                  </span>
+                  <input 
+                    type="text" class="form-control" 
+                    formControlName="fechaFinInput"
+                    id="fechaFinInput" 
+                    placeholder="Fecha Fin"
+                    [(ngModel)]="experiencia.fecha_fin"
+                  >
+                </div>
+            </form>
           </h5>
 
           <p 
@@ -62,7 +129,22 @@
               class="text-muted"
               id="descripcion-experiencia{{experiencia.id}}"
             >
-              {{experiencia.descripcion}}
+              <span *ngIf="!edition_mode">{{experiencia.descripcion}}</span>
+
+          <form 
+            class="card add-form" 
+            [formGroup]="experienciaForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">Descripción</span>
+                <textarea type="text" class="form-control" 
+                formControlName="descripcionInput"
+                id="descripcionInput" 
+                placeholder="Descripción de las tareas realizadas"
+                [(ngModel)]="experiencia.descripcion"></textarea>
+              </div>
+            </form>
             </small>
           </p>
         </div>

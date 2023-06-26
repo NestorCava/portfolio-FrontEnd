@@ -85,7 +85,7 @@ export class PortfolioHeaderComponent implements OnInit{
     this.edition_mode = true;
   }
 
-  onCancelEditionAbout(){
+  onCancelEdition(){
     this.persona.nombre = this.datosPersonalesForm.get("nombreInput")?.value;
     this.persona.apellido = this.datosPersonalesForm.get("apellidoInput")?.value;
     this.persona.posicion = this.datosPersonalesForm.get("posicionInput")?.value;
