@@ -8,10 +8,10 @@
         >
         <app-icon-edit 
             class="icon-edit"
-            (click)="onEdit(proyecto)"
+            (click)="onEdit()"
         ></app-icon-edit>
         <app-icon-delete
-            (click)="onDelete(proyecto)" 
+            (click)="onCancelEdition()" 
         ></app-icon-delete>
     </div>
     
@@ -24,13 +24,43 @@
                 id="titulo-proyecto{{proyecto.id}}"
                 style="font-weight: bold;"
                 >
-                    {{proyecto.titulo}}
+                    <span *ngIf="!edition_mode">{{proyecto.titulo}}</span>
+
+                    <form 
+            class="card add-form" 
+            [formGroup]="proyectoForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">Titulo</span>
+                <textarea type="text" class="form-control" 
+                formControlName="proyectoTituloInput"
+                id="proyectoTituloInput" 
+                placeholder="Titulo"
+                [(ngModel)]="proyecto.titulo"></textarea>
+              </div>
+            </form>
             </h3>
             <h5 
                 class="card-title"
                 id="descripcion-proyecto{{proyecto.id}}"
                 >
-                    {{proyecto.descripcion}}
+                    <span *ngIf="!edition_mode">{{proyecto.descripcion}}</span>
+
+                    <form 
+            class="card add-form" 
+            [formGroup]="proyectoForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">Titulo</span>
+                <textarea type="text" class="form-control" 
+                formControlName="proyectoDescripcionInput"
+                id="proyectoDescripcionInput" 
+                placeholder="Descripcion"
+                [(ngModel)]="proyecto.descripcion"></textarea>
+              </div>
+            </form>
             </h5>
         </div>
     </div>
