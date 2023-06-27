@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { PERSONA, Skill } from 'src/People';
 @Component({
@@ -11,6 +12,10 @@ import { PERSONA, Skill } from 'src/People';
 export class SkillsItemComponent {
   loggin: boolean=false;
   subscription?: Subscription;
+  edition_mode: boolean = false;
+
+  skillForm: FormGroup;
+
   @Input() skill:Skill = PERSONA.skills[0];
   @Output() onDeleteSkill: EventEmitter<Skill> = new EventEmitter();
   @Output() onEditSkill: EventEmitter<Skill> = new EventEmitter();
@@ -19,31 +24,26 @@ export class SkillsItemComponent {
     this.subscription = this.uiService.onToogle()
                                       .subscribe(value => this.loggin = value);
                                       this.loggin = this.uiService.getLoggin();
-  }
-
-
-  onDelete(skill: Skill){
-    this.onDeleteSkill.emit(skill);
-  }
-
-  onEdit(skill: Skill){
-
-    //let s: string =(document.getElementById("porcentaje-skill"+skill.id)?.textContent as String);
     
-    let isNumeric: boolean = !Number(document.getElementById("porcentaje-skill"+skill.id)?.textContent as String);
+    this.skillForm = new FormGroup({
+                                    skillInput: new FormControl(""),
+                                    porcentajeInput: new FormControl("")
+                                      });
+  }
 
-    if (isNumeric){
-      alert("Ingrese un valor numérico");
-    }else{
-      let porcentaje: number = Number(document.getElementById("porcentaje-skill"+skill.id)?.textContent as String);
-      if (porcentaje<=100){
-        skill.porcentaje=porcentaje
-        skill.skill=(document.getElementById("skill-skill"+skill.id))
-                                              ?.textContent as string;
-        this.onEditSkill.emit(this.skill);
-      }else alert("Ingrese un valor entre 0 y 100");
+
+  onCancelEdition(){
+    this.skill.skill = this.skillForm.get("skillInput")?.value;
+    this.skill.porcentaje = this.skillForm.get("porcentajeInput")?.value;
+
+    this.edition_mode = false;
+  }
+
+  onEdit(){
+
+    this.edition_mode = true;
       
     }
 
-  }
+  
 }

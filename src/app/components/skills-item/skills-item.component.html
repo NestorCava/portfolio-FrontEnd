@@ -20,10 +20,52 @@
     ></circle-progress>   
     <div class="valores">
 
-        <h3 id="skill-skill{{skill.id}}">{{skill.skill}}</h3>
+        <h3 id="skill-skill{{skill.id}}">
+            <span *ngIf="!edition_mode">{{skill.skill}}</span>
+
+            <form 
+            class="card add-form" 
+            [formGroup]="skillForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">Skill</span>
+                <input 
+                    type="text" class="form-control" 
+                    formControlName="skillInput"
+                    id="skillInput" 
+                    placeholder="Skill"
+                    [(ngModel)]="skill.skill"
+                  >
+              </div>
+            </form>
+        </h3>
         <h5>
-            <span id="porcentaje-skill{{skill.id}}">{{skill.porcentaje}}</span>
-            <span contenteditable="false">%</span>
+            <div *ngIf="!edition_mode">
+                <span id="porcentaje-skill{{skill.id}}">{{skill.porcentaje}}</span>
+                <span contenteditable="false">%</span>
+            </div>
+            
+            <form 
+            class="card add-form" 
+            [formGroup]="skillForm"
+            *ngIf="edition_mode"
+              >
+              <div class="input-group">
+                <span class="input-group-text">%</span>
+                <input 
+                    type="number" 
+                    min="0"
+                    max="100"
+                    step="1"
+                    class="form-control" 
+                    formControlName="porcentajeInput"
+                    id="porcentajeInput" 
+                    
+                    [(ngModel)]="skill.porcentaje"
+                  >
+              </div>
+            </form>
         </h5>
         
     </div>
@@ -32,10 +74,10 @@
         *ngIf="loggin">
         <app-icon-edit 
             class="icon-edit"
-            (click)="onEdit(skill)"
+            (click)="onEdit()"
         ></app-icon-edit>
         <app-icon-delete
-            (click)="onDelete(skill)"  
+            (click)="onCancelEdition()"  
         ></app-icon-delete>
     </div>
 </div>
