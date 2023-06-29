@@ -21,14 +21,14 @@
     <p 
         class="card-text" 
         id="about-paragraph"
-        *ngIf="!edition_mode"
+        *ngIf="!loggin"
         >{{persona.acerca}}
     </p>
 
     <form 
         class="card add-form" 
         [formGroup]="aboutForm"
-        *ngIf="edition_mode"
+        *ngIf="loggin"
         >
 
             <textarea 

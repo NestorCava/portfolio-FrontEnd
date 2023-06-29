@@ -22,7 +22,7 @@ export interface RedSocial {
 }
 export interface Experiencia {
     id?:number,
-    icono:string,
+   
     empresa:string,
     cargo:string,
     fecha_inicio:Date,
@@ -32,7 +32,7 @@ export interface Experiencia {
 
 export interface Educacion{
     id?:number,
-    icono:string,
+    
     titulo:string,
     institucion:string,
     fecha_inicio:Date,

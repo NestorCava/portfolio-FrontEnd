@@ -24,10 +24,14 @@ export class PersonaComponent implements OnInit{
 
   constructor(
     private personaService: PersonaService
-  ){}
+  ){
+    
+  }
 
   ngOnInit(): void {
     this.personaService.getPeople(1).subscribe((persona) => {this.persona = persona});
+    console.log("PERSONA");
+    //console.log(this.persona);
   }
 
   updateAbout(persona: Persona){

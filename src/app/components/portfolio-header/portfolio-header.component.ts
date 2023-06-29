@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { PERSONA, Persona } from '../../../People';
 
@@ -33,17 +33,19 @@ export class PortfolioHeaderComponent implements OnInit{
                                               nombreInput: new FormControl(""),
                                               apellidoInput: new FormControl(""),
                                               posicionInput: new FormControl(""),
-                                              localidadInput: new FormControl("")
+                                              localidadInput: new FormControl(""),
+                                              redesSocialesInput: new FormArray([])
                                             });
     
-    for(let i=0; i<this.persona.redesSociales.length; i++){
-      let nombre: string = "red" + this.persona.redesSociales[i] + "Input";
+    /* for(let i=0; i<this.persona.redesSociales.length; i++){
+      let nombre: string = "red" + this.persona.redesSociales[i].id?.toString + "Input";
       this.datosPersonalesForm.addControl(nombre,new FormControl("")); 
-    }
+    } */
     
   }
 
   ngOnInit(): void {
+    
   }
 
   deleteAboutEdition(){
@@ -77,12 +79,15 @@ export class PortfolioHeaderComponent implements OnInit{
   }
 
   onEdit(){
-    for(let i=0; i<this.persona.redesSociales.length; i++){
+    /* for(let i=0; i<this.persona.redesSociales.length; i++){
       console.log("Entro");
-      let nombre: string = "red" + this.persona.redesSociales[i].id + "Input";
+      let nombre: string = "red" + this.persona.redesSociales[i].id?.toString + "Input";
       this.datosPersonalesForm.addControl(nombre,new FormControl("nombre")); 
-    }
+    } */
     this.edition_mode = true;
+
+    console.log("PERSONA");
+    console.log(this.persona);
   }
 
   onCancelEdition(){
@@ -91,10 +96,10 @@ export class PortfolioHeaderComponent implements OnInit{
     this.persona.posicion = this.datosPersonalesForm.get("posicionInput")?.value;
     this.persona.localidad = this.datosPersonalesForm.get("localidadInput")?.value;
 
-    for(let i=0; i<this.persona.redesSociales.length; i++){
+   /*  for(let i=0; i<this.persona.redesSociales.length; i++){
       let nombre: string = "red" + this.persona.redesSociales[i].id + "Input";
       this.persona.redesSociales[i].url = this.datosPersonalesForm.get(nombre)?.value;
-    }
+    } */
 
     this.edition_mode = false;
   }

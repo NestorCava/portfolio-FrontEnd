@@ -24,12 +24,12 @@
                 id="titulo-proyecto{{proyecto.id}}"
                 style="font-weight: bold;"
                 >
-                    <span *ngIf="!edition_mode">{{proyecto.titulo}}</span>
+                    <span *ngIf="!loggin">{{proyecto.titulo}}</span>
 
                     <form 
             class="card add-form" 
             [formGroup]="proyectoForm"
-            *ngIf="edition_mode"
+            *ngIf="loggin"
               >
               <div class="input-group">
                 <span class="input-group-text">Titulo</span>
@@ -45,12 +45,12 @@
                 class="card-title"
                 id="descripcion-proyecto{{proyecto.id}}"
                 >
-                    <span *ngIf="!edition_mode">{{proyecto.descripcion}}</span>
+                    <span *ngIf="!loggin">{{proyecto.descripcion}}</span>
 
                     <form 
             class="card add-form" 
             [formGroup]="proyectoForm"
-            *ngIf="edition_mode"
+            *ngIf="loggin"
               >
               <div class="input-group">
                 <span class="input-group-text">Titulo</span>

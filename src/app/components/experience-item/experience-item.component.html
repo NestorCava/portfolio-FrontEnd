@@ -38,7 +38,7 @@
             class="card-title" 
             style="font-weight: bold;"
           >
-            <div *ngIf="!edition_mode">
+            <div *ngIf="!loggin">
               <span id="empresa-experiencia{{experiencia.id}}" >{{experiencia.empresa}}</span>
               <span> - </span>
               <span id="cargo-experiencia{{experiencia.id}}">{{experiencia.cargo}}</span>
@@ -47,7 +47,7 @@
             <form 
               class="card add-form" 
               [formGroup]="experienciaForm"
-              *ngIf="edition_mode"
+              *ngIf="loggin"
               >
                 <div class="input-group">
                   <span
@@ -81,7 +81,7 @@
           <h5 
             class="card-title"
           >
-            <div *ngIf="!edition_mode">
+            <div *ngIf="!loggin">
               <span id="fecha-inicio-experiencia{{experiencia.id}}">{{experiencia.fecha_inicio}}</span>
               <span> - </span>
               <span id="fecha-fin-experiencia{{experiencia.id}}">{{experiencia.fecha_fin}}</span>
@@ -91,7 +91,7 @@
             <form 
               class="card add-form" 
               [formGroup]="experienciaForm"
-              *ngIf="edition_mode"
+              *ngIf="loggin"
               >
                 <div class="input-group">
                   <span
@@ -99,7 +99,7 @@
                       Fecha Inicio
                   </span>
                   <input 
-                    type="text" class="form-control" 
+                    type="date" class="form-control" 
                     formControlName="fechaInicioInput"
                     id="fechaInicioInput" 
                     placeholder="Fecha Inicio"
@@ -112,7 +112,7 @@
                       Fecha Fin
                   </span>
                   <input 
-                    type="text" class="form-control" 
+                    type="date" class="form-control" 
                     formControlName="fechaFinInput"
                     id="fechaFinInput" 
                     placeholder="Fecha Fin"
@@ -129,12 +129,12 @@
               class="text-muted"
               id="descripcion-experiencia{{experiencia.id}}"
             >
-              <span *ngIf="!edition_mode">{{experiencia.descripcion}}</span>
+              <span *ngIf="!loggin">{{experiencia.descripcion}}</span>
 
           <form 
             class="card add-form" 
             [formGroup]="experienciaForm"
-            *ngIf="edition_mode"
+            *ngIf="loggin"
               >
               <div class="input-group">
                 <span class="input-group-text">Descripción</span>

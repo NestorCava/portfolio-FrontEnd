@@ -40,12 +40,12 @@
               id="titulo-educacion{{educacion.id}}" 
               style="font-weight: bold;"
               >
-                <span *ngIf="!edition_mode">{{educacion.titulo}}</span>
+                <span *ngIf="!loggin">{{educacion.titulo}}</span>
 
                 <form 
               class="card add-form" 
               [formGroup]="educacionForm"
-              *ngIf="edition_mode"
+              *ngIf="loggin"
               >
                 <div class="input-group">
                   <span
@@ -67,12 +67,12 @@
               class="card-title" 
               id="institucion-educacion{{educacion.id}}"
               >
-                <span *ngIf="!edition_mode">{{educacion.institucion}}</span>
+                <span *ngIf="!loggin">{{educacion.institucion}}</span>
 
                 <form 
                   class="card add-form" 
                   [formGroup]="educacionForm"
-                  *ngIf="edition_mode"
+                  *ngIf="loggin"
                   >
                     <div class="input-group">
                       <span
@@ -93,7 +93,7 @@
             <h5>
               <div 
               class="card-text"
-              *ngIf="!edition_mode"
+              *ngIf="!loggin"
               >
                 <span id="fecha-inicio-educacion{{educacion.id}}">{{educacion.fecha_inicio}}</span>
                 <span> - </span>
@@ -104,7 +104,7 @@
               <form 
               class="card add-form" 
               [formGroup]="educacionForm"
-              *ngIf="edition_mode"
+              *ngIf="loggin"
               >
                 <div class="input-group">
                   <span
@@ -112,7 +112,7 @@
                       Fecha Inicio
                   </span>
                   <input 
-                    type="text" class="form-control" 
+                    type="date" class="form-control" 
                     formControlName="fechaInicioInput"
                     id="fechaInicioInput" 
                     placeholder="Fecha Inicio"
@@ -125,7 +125,7 @@
                       Fecha Fin
                   </span>
                   <input 
-                    type="text" class="form-control" 
+                    type="date" class="form-control" 
                     formControlName="fechaFinInput"
                     id="fechaFinInput" 
                     placeholder="Fecha Fin"
@@ -143,12 +143,12 @@
                 class="text-muted" 
                 id="mensiones-educacion{{educacion.id}}"
                 >
-                <span *ngIf="!edition_mode">{{educacion.mensiones}}</span>
+                <span *ngIf="!loggin">{{educacion.mensiones}}</span>
 
                 <form 
             class="card add-form" 
             [formGroup]="educacionForm"
-            *ngIf="edition_mode"
+            *ngIf="loggin"
               >
               <div class="input-group">
                 <span class="input-group-text">Mensiones</span>
